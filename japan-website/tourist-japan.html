@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tourist Japan — Places</title>
+
+  <!-- Modern Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="tourist-japan.css">
+</head>
+<body>
+
+    <!-- BACK BUTTON -->
+<a href="japan-index.html" class="back-btn glass">
+  ← BACK
+</a>
+
+  <header class="navbar glass">
+    <div class="logo">JAPAN</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#about">About</a>
+    </nav>
+    <button id="themeToggle" aria-label="Toggle theme">☾</button>
+  </header>
+
+
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="section hero">
+      <div class="hero-content glass">
+        <h1>Experience Japan</h1>
+        <p>Tradition meets the future in every corner.</p>
+        <a id="exploreBtn" class="cta" href="#destinations">Explore Now</a>
+      </div>
+    </section>
+
+    <!-- DESTINATIONS -->
+    <section id="destinations" class="section">
+      <h2 class="section-title">Top Destinations</h2>
+
+      <div class="cards-container">
+        <!-- NOTE: each card is an anchor linking to its page -->
+        <a class="card glass" href="tokyo.html" title="Open Tokyo page">
+          <div class="card-media" style="background-image:url('tokyo.png')"></div>
+          <div class="card-body">
+            <h3>Tokyo</h3>
+            <p>Neon lights, anime culture, and endless city life.</p>
+          </div>
+        </a>
+
+        <a class="card glass" href="kyoto.html" title="Open Kyoto page">
+          <div class="card-media" style="background-image:url('kyoto.png')"></div>
+          <div class="card-body">
+            <h3>Kyoto</h3>
+            <p>Temples, geisha districts, and cherry blossoms.</p>
+          </div>
+        </a>
+
+        <a class="card glass" href="osaka.html" title="Open Osaka page">
+          <div class="card-media" style="background-image:url('nikko.png')"></div>
+          <div class="card-body">
+            <h3>Osaka</h3>
+            <p>Street food capital with vibrant nightlife.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="about-box glass">
+        <h2>Why Visit Japan?</h2>
+        <p>
+          Japan blends ancient tradition with futuristic innovation.
+          From serene temples to high-speed trains, every experience
+          is unforgettable.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="tourist-japan.js" defer></script>
+</body>
+</html>

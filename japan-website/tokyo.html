@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tokyo — Tourist Japan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tourist-japan.css">
+</head>
+
+<body>
+
+<header class="navbar glass">
+  <div class="logo">JAPAN</div>
+  <nav>
+    <a href="tourist-japan.html">Home</a>
+    <a href="tokyo.html">Tokyo</a>
+    <a href="kyoto.html">Kyoto</a>
+    <a href="osaka.html">Osaka</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="city-hero" style="background-image:url('tokyo.png')">
+  <div class="hero-content glass">
+    <h1>Tokyo</h1>
+    <p>A perfect blend of neon lights, ancient temples, and futuristic innovation.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <h2 class="section-title">Tokyo Gallery</h2>
+
+  <div class="cards-container">
+
+    <!-- SHIBUYA -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('shibuya.jpg')"></div>
+      <div class="card-body">
+        <h3>Shibuya Crossing</h3>
+        <p>The busiest pedestrian crossing in the world.</p>
+        <button class="open-modal"
+          data-img="shibuya.jpg"
+          data-title="Shibuya Crossing"
+          data-desc="Shibuya Crossing is the busiest pedestrian intersection in the world. Thousands of people cross at once under neon billboards and giant LED screens. It represents the unstoppable energy and futuristic vibe of Tokyo.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- SENSOJI -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('temple.jpeg')"></div>
+      <div class="card-body">
+        <h3>Senso-ji Temple</h3>
+        <p>Tokyo’s oldest Buddhist temple.</p>
+        <button class="open-modal"
+          data-img="temple.jpeg"
+          data-title="Senso-ji Temple"
+          data-desc="Senso-ji Temple in Asakusa is Tokyo’s most historic temple. The iconic Kaminarimon Gate welcomes visitors with a giant red lantern. The surrounding streets are filled with traditional snacks and souvenir shops.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- TOKYO TOWER -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('tower.jpg')"></div>
+      <div class="card-body">
+        <h3>Tokyo Tower</h3>
+        <p>City skyline views at night.</p>
+        <button class="open-modal"
+          data-img="tower.jpg"
+          data-title="Tokyo Tower"
+          data-desc="Tokyo Tower offers breathtaking panoramic views of the city skyline. At night, the tower glows beautifully against the dark sky, making it one of Tokyo’s most romantic and iconic landmarks.">
+          View
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="placeModal" class="modal">
+  <div class="modal-box glass">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <img id="modalImage" src="">
+    <div class="modal-text">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const buttons = document.querySelectorAll(".open-modal");
+  const modal = document.getElementById("placeModal");
+  const modalImg = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDescription");
+  const closeBtn = document.getElementById("modalClose");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      modalImg.src = btn.dataset.img;
+      modalTitle.textContent = btn.dataset.title;
+      modalDesc.textContent = btn.dataset.desc;
+      modal.style.display = "flex";
+    });
+  });
+
+  function closeModal(){
+    modal.style.display = "none";
+    modalImg.src = "";
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if(e.target === modal){
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+      closeModal();
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>
