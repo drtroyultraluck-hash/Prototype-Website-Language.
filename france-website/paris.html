@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tokyo — Tourist Japan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tourist-france.css">
+</head>
+
+<body>
+
+<header class="navbar glass">
+  <div class="logo">FRANCE</div>
+  <nav>
+    <a href="tourist-france.html">Home</a>
+    <a href="paris.html">Paris</a>
+    <a href="nice.html">Nice</a>
+    <a href="lyon.html">Lyon</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="city-hero" style="background-image:url('paris.jpg')">
+  <div class="hero-content glass">
+    <h1>Paris</h1>
+    <p>A perfect blend of neon lights, ancient temples, and futuristic innovation.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <h2 class="section-title">Paris Gallery</h2>
+
+  <div class="cards-container">
+
+    <!-- EIFFEL TOWER -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('explorefrance.webp')"></div>
+      <div class="card-body">
+        <h3>Eiffel Tower</h3>
+        <p>The most iconic symbol of France, built in 1889.</p>
+        <button class="open-modal"
+          data-img="explorefrance.webp"
+          data-title="Eiffel Tower"
+          data-desc="The Eiffel Tower is the most famous symbol of France, built in 1889 for the World’s Fair in Paris. Visitors can go up to enjoy breathtaking panoramic views of the city.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- LOUVRE MUSEUM -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('louvremuseum.webp')"></div>
+      <div class="card-body">
+        <h3>Louvre Museum</h3>
+        <p>The world's largest art museum, home of the Mona Lisa.</p>
+        <button class="open-modal"
+          data-img="louvremuseum.webp"
+          data-title="Louvre Museum"
+          data-desc="The Louvre Museum is the largest art museum in the world and a historic monument in Paris. It houses thousands of artworks, including the Mona Lisa and the Venus de Milo.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- NOTRE-DAME CATHEDRAL -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('notredamecat.webp')"></div>
+      <div class="card-body">
+        <h3>Notre-Dame Cathedral</h3>
+        <p>A historic Gothic cathedral with stunning stained-glass windows.</p>
+        <button class="open-modal"
+          data-img="notredamecat.webp"
+          data-title="Notre-Dame Cathedral"
+          data-desc="Notre-Dame Cathedral is a masterpiece of French Gothic architecture located on Île de la Cité. It is famous for its stained-glass rose windows and detailed stone carvings.">
+          View
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="placeModal" class="modal">
+  <div class="modal-box glass">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <img id="modalImage" src="">
+    <div class="modal-text">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const buttons = document.querySelectorAll(".open-modal");
+  const modal = document.getElementById("placeModal");
+  const modalImg = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDescription");
+  const closeBtn = document.getElementById("modalClose");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      modalImg.src = btn.dataset.img;
+      modalTitle.textContent = btn.dataset.title;
+      modalDesc.textContent = btn.dataset.desc;
+      modal.style.display = "flex";
+    });
+  });
+
+  function closeModal(){
+    modal.style.display = "none";
+    modalImg.src = "";
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if(e.target === modal){
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+      closeModal();
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>
