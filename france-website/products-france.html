@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>France — Technology Showcase</title>
+
+  <!-- Modern fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Lexend:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Material icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+
+  <link rel="stylesheet" href="products-france.css" />
+</head>
+<body>
+  <div class="bg-layer"></div>
+
+  <header class="nav glass">
+    <a href="france-index.html" class="back-btn">
+  <span class="material-icons-outlined">arrow_back</span>
+  Exit
+</a>
+    <div class="brand">
+      <div class="logo">🇫🇷</div>
+      <div class="title">France Tech — <span>Innovations</span></div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <div class="controls">
+      <button id="themeBtn" class="icon-btn" title="Toggle theme"><span class="material-icons-outlined">light_mode</span></button>
+      <div class="search glass">
+        <input id="search" placeholder="Search tech, companies, products..." aria-label="Search" />
+        <button id="clearSearch" class="icon-btn"><span class="material-icons-outlined">close</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero glass" id="home">
+      <div class="hero-left">
+        <h1>France's <span>Technology</span> Scene</h1>
+        <p class="lede">From robotics to next-gen transport — explore interactive demos, curated products, and a historical timeline presented in elegant glass UI.</p>
+
+        <div class="hero-cta">
+          <a href="#products" class="btn primary">Explore Products</a>
+          <a href="#timeline" class="btn ghost">See Timeline</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="num" data-count="120">0</div>
+            <div class="label">Featured Items</div>
+          </div>
+          <div class="stat">
+            <div class="num" data-count="48">0</div>
+            <div class="label">Companies</div>
+          </div>
+          <div class="stat">
+            <div class="num" data-count="30">0</div>
+            <div class="label">Interactive Demos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="card-spotlight glass interactive" data-type="spotlight">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" alt="robotics" loading="lazy" />
+          <div class="spot-info">
+            <h3>Robotics</h3>
+            <p>Humanoid and industrial robotics from leading French companies.</p>
+            <button class="btn small" data-open="robot">View Demo</button>
+          </div>
+        </div>
+
+        <div class="mini-grid">
+          <div class="glass pill">AI · ML</div>
+          <div class="glass pill">Mobility</div>
+          <div class="glass pill">Consumer</div>
+          <div class="glass pill">Sustainable Energy</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section glass-wrap">
+      <div class="container">
+        <h2>Featured Technologies</h2>
+        <p class="sub">Interactive cards — hover, tilt, and expand for details.</p>
+
+        <div class="filters">
+          <select id="filterCategory">
+            <option value="all">All</option>
+            <option value="robotics">Robotics</option>
+            <option value="mobility">Mobility</option>
+            <option value="ai">AI / ML</option>
+            <option value="energy">Energy</option>
+            <option value="consumer">Consumer</option>
+          </select>
+
+          <div class="range-wrap">
+            <label>Interactivity</label>
+            <input id="rangeInteraction" type="range" min="0" max="100" value="70" />
+          </div>
+        </div>
+
+        <div id="products" class="grid" aria-live="polite">
+          <!-- Cards populated by JS -->
+        </div>
+
+        <div class="pager">
+          <button id="loadMore" class="btn ghost">Load more</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="section glass-wrap">
+      <div class="container">
+        <h2>Historical Timeline</h2>
+        <div class="timeline">
+          <!-- timeline entries populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section glass-wrap">
+      <div class="container about-grid">
+        <div class="about-card glass">
+          <h3>Why France?</h3>
+          <p>France blends craftsmanship with cutting-edge research — from transport to robotics and consumer electronics.</p>
+          <ul>
+            <li>Systematic R&D investment</li>
+            <li>Public-private coordination</li>
+            <li>Cultural appreciation for miniaturization & efficiency</li>
+          </ul>
+        </div>
+
+        <div class="about-card glass">
+          <h3>Resources</h3>
+          <p>Curated resources and links to museums, companies, and research centers (sample items).</p>
+          <ol>
+            <li>Robotics labs</li>
+            <li>Transport initiatives</li>
+            <li>Consumer tech showcases</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="glass footer">
+ <button id="downloadBtn" class="linkish"></button></div>
+  </footer>
+
+  <!-- Modal template -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel glass" role="dialog" aria-modal="true">
+      <button class="close" data-close aria-label="Close modal"><span class="material-icons-outlined">close</span></button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="products-france.js" defer></script>
+</body>
+</html>
