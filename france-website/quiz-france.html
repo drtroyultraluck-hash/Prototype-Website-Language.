@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz — France</title>
+
+  <!-- Google Fonts (header uses a modern, slightly unusual font) -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="quiz-france.css">
+</head>
+<body>
+  <!-- START MODAL (intro) -->
+  <div id="introModal" class="modal-overlay active" aria-hidden="false">
+    <div class="modal glass">
+      <h2>Are you confident enough to take the quiz?</h2>
+      <p>Good luck!</p>
+      <button id="startBtn" class="btn large">Take the quiz</button>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="page-header glass">
+    <div class="header-left">
+      <h1 class="title">Quiz</h1>
+    </div>
+    <div class="header-right">
+      <div id="progressText" class="progress-text">Quiz 0/10</div>
+    </div>
+  </header>
+
+  <!-- MAIN QUIZ CONTAINER -->
+  <main class="main-wrap">
+    <section class="quiz-card glass" id="quizCard" aria-live="polite">
+      <div class="question-area">
+        <h2 id="questionText">Question text goes here</h2>
+        <div id="imgHolder" class="img-holder hidden">
+          <!-- user will replace src with their own image -->
+          <img id="questionImage" src="" alt="Question related image placeholder">
+        </div>
+      </div>
+
+      <div id="choices" class="choices-grid">
+        <!-- choice buttons will be injected here -->
+      </div>
+
+      <div class="actions">
+        <button id="checkBtn" class="btn" disabled>Check and proceed</button>
+      </div>
+    </section>
+
+    <div class="footer">
+  <a href="france-index.html" class="btn exit-btn">EXIT</a>
+</div>
+  </main>
+
+  <!-- RESULT OVERLAY -->
+  <div id="resultModal" class="modal-overlay hidden" aria-hidden="true">
+    <div class="modal glass result-modal">
+      <h2 id="resultTitle">Result</h2>
+      <p id="resultMessage" class="result-message"></p>
+      <p class="score-text"><strong id="scoreText">0 / 10</strong></p>
+      <div class="result-actions">
+        <button id="tryAgainBtn" class="btn">Try Again</button>
+        <button id="exitBtn" class="btn ghost">Exit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="quiz-france.js" defer></script>
+</body>
+</html>

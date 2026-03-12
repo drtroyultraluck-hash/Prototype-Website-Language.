@@ -1,0 +1,490 @@
+:root{
+  --bg: linear-gradient(135deg,#0f0f1a,#1b1b2f);
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.12);
+  --muted: rgba(255,255,255,0.78);
+  --accent: #ff6b6b;
+  --radius: 18px;
+  --max-w: 1200px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background:var(--bg);
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* Glass helper */
+.glass{
+  background:var(--glass-bg);
+  backdrop-filter:blur(12px) saturate(120%);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* Navbar */
+.navbar{
+  position:fixed;top:14px;left:50%;transform:translateX(-50%);
+  width:calc(100% - 40px);max-width:var(--max-w);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:12px 18px;z-index:1000;
+}
+.navbar .logo{font-weight:700;letter-spacing:2px}
+.navbar nav a{color:var(--muted);text-decoration:none;margin:0 12px;font-weight:600}
+#themeToggle{background:transparent;border:0;color:var(--muted);font-size:18px;cursor:pointer}
+
+/* Sections */
+.section{
+  min-height:100vh;
+  padding:110px 5% 80px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:28px;
+  width:100%;
+}
+
+/* Hero */
+.hero{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('explorefrance.webp') center center / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.8)
+  );
+}
+.hero-content{
+  position:relative;padding:48px 36px;text-align:center;max-width:900px;
+}
+.hero-content h1{font-size:clamp(32px,6vw,56px);margin-bottom:12px;line-height:1}
+.hero-content p{font-weight:300;margin-bottom:18px}
+.cta{display:inline-block;padding:12px 26px;border-radius:26px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+
+/* Cards */
+.section-title{font-size:clamp(22px,3vw,36px);margin-bottom:8px}
+.cards-container{display:flex;gap:26px;flex-wrap:wrap;justify-content:center;width:100%}
+.card{
+  display:flex;flex-direction:column;overflow:hidden;width:320px;border-radius:14px;text-decoration:none;color:inherit;
+  transition:transform .35s ease, box-shadow .35s;
+}
+.card-media{height:180px;background-size:cover;background-position:center}
+.card-body{padding:18px}
+.card h3{margin-bottom:8px}
+.card p{color:var(--muted);font-weight:300}
+
+/* hover */
+.card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 30px 80px rgba(0,0,0,0.6)}
+
+/* About */
+.about-box{padding:36px;max-width:760px;text-align:center}
+
+/* Responsive */
+@media (max-width:900px){
+  .cards-container{flex-direction:column;align-items:center}
+  .hero-content{padding:36px}
+  .section{padding:100px 4%}
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* DESTINATIONS BACKGROUND */
+#destinations{
+  position: relative;
+  padding: 120px 6%;
+  background: url('topdes.webp') center center / cover no-repeat;
+  overflow: hidden;
+}
+
+/* dark overlay */
+#destinations::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(2px);
+}
+
+/* para nasa ibabaw ang content */
+#destinations .section-title,
+#destinations .cards-container{
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+/* ABOUT BACKGROUND */
+#about{
+  position: relative;
+  padding: 140px 8%;
+  background: url('about.jpg') center center / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* gradient overlay para dramatic */
+#about::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.8)
+  );
+}
+
+/* about glass box above overlay */
+#about .about-box{
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 800px;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+/* PAGE HERO (PER CITY) */
+
+.city-hero{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 8% 80px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.city-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.65);
+}
+
+.city-hero .hero-content{
+  position: relative;
+  z-index:2;
+  max-width: 700px;
+}
+
+/* GALLERY CARD IMAGE */
+
+.card-media{
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px 16px 0 0;
+}
+
+.card-body{
+  padding: 18px;
+}
+
+/* BUTTON STYLE */
+
+.card-body button{
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #ff4c60;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.card-body button:hover{
+  transform: scale(1.05);
+}
+
+/* MODAL */
+
+.modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+}
+
+.modal-content{
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 90%;
+}
+
+.close-btn{
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* CITY HERO FULL CENTER */
+.city-hero{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Dark overlay */
+.city-hero::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+/* Hero glass box */
+.city-hero .hero-content{
+  position: relative;
+  z-index: 2;
+  padding: 50px 60px;
+  max-width: 800px;
+}
+
+/* MODAL FULLSCREEN */
+.modal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+/* Modal box */
+.modal-box{
+  max-width: 900px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Modal image */
+.modal-box img{
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+/* Text */
+.modal-text h2{
+  margin-bottom: 10px;
+}
+
+.modal-text p{
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Close button */
+.modal-close{
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* BACK BUTTON */
+
+.back-btn{
+  position: fixed;
+  top: 18px;
+  left: 25px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  z-index: 1500;
+  transition: all 0.35s ease;
+  backdrop-filter: blur(12px);
+}
+
+/* Gradient hover effect */
+.back-btn:hover{
+  background: linear-gradient(135deg, #ff4c60, #ff9966);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+body.light .back-btn{
+  color: #111;
+}
+
+/* Animation */
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ☀ LIGHT MODE OVERRIDE */
+
+body.light{
+  --bg: linear-gradient(135deg,#f5f7fa,#e4e9f2);
+  --glass-bg: rgba(255,255,255,0.7);
+  --glass-border: rgba(0,0,0,0.08);
+  --muted: rgba(0,0,0,0.7);
+  --accent: #ff4c60;
+  color: #111;
+}
+
+/* MOBILE VERSION (600px) */
+
+@media (max-width: 600px){
+
+  /* Navbar */
+  .navbar{
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 14px;
+  }
+
+  .navbar nav a{
+    margin: 0 6px;
+    font-size: 14px;
+  }
+
+  /* Hero Section */
+  .hero{
+    height: 100vh;
+    padding: 0 20px;
+  }
+
+  .hero-content{
+    padding: 28px 20px;
+  }
+
+  .hero-content h1{
+    font-size: 28px;
+  }
+
+  .hero-content p{
+    font-size: 14px;
+  }
+
+  .cta{
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  /* Cards Layout */
+  .cards-container{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card{
+    width: 100%;
+  }
+
+  .card-media{
+    height: 160px;
+  }
+
+  /* Section padding */
+  .section{
+    padding: 90px 6% 60px;
+  }
+
+  /* About Box */
+  #about .about-box{
+    padding: 30px 20px;
+  }
+
+  /* City Hero */
+  .city-hero{
+    padding: 120px 6% 60px;
+  }
+
+  .city-hero .hero-content{
+    padding: 30px 20px;
+  }
+
+  /* MODAL MOBILE */
+
+  .modal{
+    align-items: flex-start;
+    padding-top: 80px;
+    overflow-y: auto;
+  }
+
+  .modal-box{
+    padding: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-box img{
+    max-height: 250px;
+  }
+
+  .modal-text h2{
+    font-size: 20px;
+  }
+
+  .modal-text p{
+    font-size: 14px;
+  }
+
+  .modal-close{
+    font-size: 22px;
+    top: 10px;
+    right: 14px;
+  }
+
+}
