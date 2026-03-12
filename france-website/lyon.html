@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lyon - Tourist France</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tourist-france.css">
+</head>
+
+<body>
+
+<header class="navbar glass">
+  <div class="logo">FRANCE</div>
+  <nav>
+    <a href="tourist-france.html">Home</a>
+    <a href="paris.html">Tokyo</a>
+    <a href="nice.html">Kyoto</a>
+    <a href="lyon.html">Lyon</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="city-hero" style="background-image:url('lyon.webp')">
+  <div class="hero-content glass">
+    <h1>Lyon</h1>
+    <p>A historic city known for its food, Renaissance architecture, and cultural heritage.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <h2 class="section-title">Lyon Gallery</h2>
+
+  <div class="cards-container">
+
+    <!-- basilica -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('basilica.jpg')"></div>
+      <div class="card-body">
+        <h3>Basilica of Notre-Dame de Fouviere</h3>
+        <p>A grand basilica overlooking the city.</p>
+        <button class="open-modal"
+          data-img="basilica.jpg"
+          data-title="Basilica of Notre-Dame de Fouviere"
+          data-desc="The Basilica of Notre-Dame de Fourvière is a grand white basilica overlooking the city of Lyon. It is known for its detailed mosaics and panoramic city views.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- Vieux -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('vieux.jpg')"></div>
+      <div class="card-body">
+        <h3>Vieux Lyon</h3>
+        <p>The Old Town filled with medieval streets.</p>
+        <button class="open-modal"
+          data-img="vieux.jpg"
+          data-title="Vieux Lyon"
+          data-desc="Vieux Lyon is the historic old town of Lyon filled with Renaissance buildings and narrow cobblestone streets. It is one of the best-preserved medieval districts in France.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- parc-->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('parc.jpg')"></div>
+      <div class="card-body">
+        <h3>Parc de la Tete d Or</h3>
+        <p>A large park with a lake, zoo, and gardens.</p>
+        <button class="open-modal"
+          data-img="parc.jpg"
+          data-title="Parc de la Tete d Or"
+          data-desc="Parc de la Tête d'Or is a large public park in Lyon featuring a lake, botanical gardens, and a free zoo. It is a popular place for picnics, jogging, and relaxing outdoors.">
+          View
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="placeModal" class="modal">
+  <div class="modal-box glass">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <img id="modalImage" src="">
+    <div class="modal-text">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const buttons = document.querySelectorAll(".open-modal");
+  const modal = document.getElementById("placeModal");
+  const modalImg = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDescription");
+  const closeBtn = document.getElementById("modalClose");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      modalImg.src = btn.dataset.img;
+      modalTitle.textContent = btn.dataset.title;
+      modalDesc.textContent = btn.dataset.desc;
+      modal.style.display = "flex";
+    });
+  });
+
+  function closeModal(){
+    modal.style.display = "none";
+    modalImg.src = "";
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if(e.target === modal){
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+      closeModal();
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>

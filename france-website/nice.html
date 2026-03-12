@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyoto — Tourist Japan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tourist-france.css">
+</head>
+
+<body>
+
+<header class="navbar glass">
+  <div class="logo">FRANCE</div>
+  <nav>
+    <a href="tourist-france.html">Home</a>
+    <a href="paris.html">Paris</a>
+    <a href="nice.html">Nice</a>
+    <a href="lyon.html">Lyon</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="city-hero" style="background-image:url('nice.png')">
+  <div class="hero-content glass">
+    <h1>Nice<h1>
+    <p>A beautiful coastal city on the French Riviera, known for its beaches, sunshine, and Mediterranean views.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <h2 class="section-title">Nice Gallery</h2>
+
+  <div class="cards-container">
+
+    <!-- NICE -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('promenade.png')"></div>
+      <div class="card-body">
+        <h3>Promenade des Anglais</h3>
+        <p>A famous walkway along the beach.</p>
+        <button class="open-modal"
+          data-img="promenade.png"
+          data-title="Promenade des Anglais"
+          data-desc="The Promenade des Anglais is a scenic seaside walkway along the Mediterranean coast in Nice. It is perfect for relaxing walks, cycling, and enjoying ocean views.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- CASTLE HILL -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('castlehill.jpg')"></div>
+      <div class="card-body">
+        <h3>Castle Hill</h3>
+        <p>Offers panoramic views of the city and sea.</p>
+        <button class="open-modal"
+          data-img="castlehill.jpg"
+          data-title="Castle Hill"
+          data-desc="Castle Hill is a historic hilltop park offering the best views of Nice and the French Riviera. Visitors can explore ruins, waterfalls, and beautiful gardens.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- NICE CATHEDRAL -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('nicecat.avif')"></div>
+      <div class="card-body">
+        <h3>Nice Cathedral</h3>
+        <p>A beautiful Baroque-style cathedral in Old Town.</p>
+        <button class="open-modal"
+          data-img="nicecat.avif"
+          data-title="Nice Cathedral"
+          data-desc="Nice Cathedral, also known as Sainte-Réparate Cathedral, is a stunning Baroque church located in Old Town Nice. It features an ornate interior and a colorful tiled dome.">
+          View
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="placeModal" class="modal">
+  <div class="modal-box glass">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <img id="modalImage" src="">
+    <div class="modal-text">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const buttons = document.querySelectorAll(".open-modal");
+  const modal = document.getElementById("placeModal");
+  const modalImg = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDescription");
+  const closeBtn = document.getElementById("modalClose");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      modalImg.src = btn.dataset.img;
+      modalTitle.textContent = btn.dataset.title;
+      modalDesc.textContent = btn.dataset.desc;
+      modal.style.display = "flex";
+    });
+  });
+
+  function closeModal(){
+    modal.style.display = "none";
+    modalImg.src = "";
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if(e.target === modal){
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+      closeModal();
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>

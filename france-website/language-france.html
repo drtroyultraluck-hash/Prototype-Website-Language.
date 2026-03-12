@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>French Language</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="language-france.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Inter:opsz,wght@14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&family=Nanum+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Storm&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- SITE NAVBAR (ADD AFTER <body>) -->
+<header class="site-navbar glass" role="banner">
+  <a href="france-index.html" class="back-btn glass" aria-label="Back to index">EXIT</a>
+
+  <nav class="site-nav" role="navigation" aria-label="About Japan navigation">
+    <a href="#basicwords">Basic Words</a>
+    <a href="#selfntroduction">Self Introduction</a>
+    <a href="#demo">Demo</a>
+  </nav>
+</header>
+
+<div class="background-overlay"></div>
+
+<main class="container">
+
+  <header class="hero">
+    <h1>French Language</h1>
+    <p>Learn essential French words with modern interactive cards</p>
+  </header>
+
+  <section class="section" id="basicwords">
+    <h2>Basic Words</h2>
+
+    <div class="card-grid">
+
+      <div class="word-card">
+        <img src="hello.png" alt="Hello" class="word-image">
+
+        <div class="card-content">
+          <h3>Hello</h3>
+
+          <p class="translation">Bonjour</p>
+
+          <div class="button-group">
+            <button class="toggle-btn">See Translation</button>
+            <button class="audio-btn">🔊</button>
+          </div>
+
+          <audio class="audio-player">
+            <source src="bonjour.m4a" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+
+      <div class="word-card">
+        <img src="thankyou.png" alt="Thank You" class="word-image">
+
+        <div class="card-content">
+          <h3>Thank You</h3>
+
+          <p class="translation">Merci</p>
+
+          <div class="button-group">
+            <button class="toggle-btn">See Translation</button>
+            <button class="audio-btn">🔊</button>
+          </div>
+
+          <audio class="audio-player">
+            <source src="Merci.m4a" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+
+      <div class="word-card">
+        <img src="please.png" alt="Good Morning" class="word-image">
+
+        <div class="card-content">
+          <h3>Please</h3>
+
+          <p class="translation">S'il te plaît</p>
+
+          <div class="button-group">
+            <button class="toggle-btn">See Translation</button>
+            <button class="audio-btn">🔊</button>
+          </div>
+
+          <audio class="audio-player">
+            <source src="silteplait.m4a" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+
+      <div class="word-card">
+        <img src="understand.png" alt="Good Morning" class="word-image">
+        <div class="card-content">
+            <h3>I don't understand</h3>
+
+            <p class="translation">Je ne comprends pas</p>
+
+            <div class="button-group">
+              <button class="toggle-btn">See Translation</button>
+              <button class="audio-btn">🔊</button>
+            </div>
+
+            <audio class="audio-player">
+              <source src="jenelyn.m4a" type="audio/mpeg">
+            </audio>
+          </div>
+        </div>
+
+      <div class="word-card">
+        <img src="okayfine.png" alt="Good Morning" class="word-image">
+        <div class="card-content">
+            <h3>It's okay / I'm fine</h3>
+
+            <p class="translation">Ça va</p>
+
+            <div class="button-group">
+              <button class="toggle-btn">See Translation</button>
+              <button class="audio-btn">🔊</button>
+            </div>
+
+            <audio class="audio-player">
+              <source src="cava.m4a" type="audio/mpeg">
+            </audio>
+          </div>
+        </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="section" id="demo">
+
+<h2>Video Demo</h2>
+
+<div class="video-grid">
+
+  <div class="video-card">
+    <video class="video-thumb" muted loop>
+      <source src="self-introduction.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-content">
+      <h3>Self Introduction</h3>
+      <button class="video-btn">Play Video</button>
+    </div>
+  </div>
+
+
+
+  <div class="video-card">
+    <video class="video-thumb" muted loop>
+      <source src="greetings.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-content">
+      <h3>Everyday Greetings</h3>
+      <button class="video-btn">Play Video</button>
+    </div>
+  </div>
+
+</div>
+
+
+</section>
+
+
+<!-- VIDEO MODAL -->
+<div class="video-modal" id="videoModal">
+
+  <div class="video-modal-content">
+    <span class="close-video">&times;</span>
+
+    <video id="mainVideo" controls>
+      <source src="introduction.MOV" type="video/mp4">
+    </video>
+
+  </div>
+
+</div>
+
+</main>
+
+<script src="language-france.js"></script>
+</body>
+</html>

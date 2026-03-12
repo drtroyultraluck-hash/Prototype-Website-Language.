@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies Recommendation in France</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylish Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="movie-france.css">
+</head>
+<body>
+
+    <!-- SITE NAVBAR (ADD AFTER <body>) -->
+<header class="site-navbar glass" role="banner">
+  <a href="france-index.html" class="back-btn glass" aria-label="Back to index">EXIT</a>
+
+  <nav class="site-nav" role="navigation" aria-label="About Japan navigation">
+    <a href="#anime">MOVIE TO WATCH</a>
+  </nav>
+</header>
+
+    <div class="background-overlay"></div>
+
+    <!-- TITLE OUTSIDE -->
+    <h1 class="main-title">MOVIE TO WATCH</h1>
+    <div class="divider"></div>
+
+    <!-- LIST CONTAINER WRAPPER -->
+    <div class="list-wrapper" id="anime">
+
+        <!-- movie 1 -->
+        <div class="anime-card" data-title="YMiraculous: Tales of Ladybug & Cat Noir"
+             data-details="Genre: Superhero, Fantaasy, Animation<br>Release: 2015<br>Director: Makoto Shinkai<br><br>A breathtaking story of two strangers mysteriously connected through dreams and time."
+             data-link="https://www.crunchyroll.com">
+
+            <div class="anime-image">
+                <img src="talesofmiraculous.webp" alt="Your Name">
+            </div>
+
+            <div class="anime-content">
+                <h2>Miraculous: Tales of Ladybug & Cat Noir</h2>
+                <p class="details">Superhero • Fantaasy • Animation</p>
+                <button class="watch-btn">Watch Trailer</button>
+            </div>
+        </div>
+
+        <!-- movie 2 -->
+        <div class="anime-card" data-title="Demon Slayer"
+             data-details="Genre: Romantic Comedy, Drama, LGBTQ+ Romance<br>Release: 2023<br><br>Red, White & Royal Blue follows Alex Claremont-Diaz, the son of the U.S. President, and Prince Henry of Britain, who start as rivals after a public incident damages U.S.–UK relations. To fix the situation, they pretend to be friends—but their fake friendship slowly turns into a secret romantic relationship that could affect politics and their families."
+             data-link="https://www.netflix.com">
+
+            <div class="anime-image">
+                <img src="redwhite.jpg" alt="Demon Slayer">
+            </div>
+
+            <div class="anime-content">
+                <h2>Red, White & Royal Blue</h2>
+                <p class="details">Romantic Comedy . Drama . LGBTQ+ Romance</p>
+                <button class="watch-btn">Watch Trailer</button>
+            </div>
+        </div>
+
+        <!-- movie 3 -->
+        <div class="anime-card" data-title="La La Land"
+             data-details="Genre: Musical, Romance, Drama<br>Release: 2016<br><br>La La Land tells the story of Mia, an aspiring actress, and Sebastian, a passionate jazz musician, who meet and fall in love while chasing their dreams in Los Angeles. As their careers begin to succeed, they must decide between following their ambitions or holding on to their relationship."
+             data-link="https://www.hulu.com">
+
+            <div class="anime-image">
+                <img src="lalaland.webp" alt="Attack on Titan">
+            </div>
+
+            <div class="anime-content">
+                <h2>La La Land</h2>
+                <p class="details">Musical • Romance • Drama</p>
+                <button class="watch-btn">Watch Trailer</button>
+            </div>
+        </div>
+
+         <!-- movie 4 -->
+        <div class="anime-card" data-title="Fairy Tail"
+             data-details="Genre: Family, Adventure, Comedy, Fantasy<br>Release: 2013 - 2017<br><br>The Smurfs 2 follows the Smurfs as they return to the human world to rescue Smurfette after the evil wizard Gargamel kidnaps her. With the help of their human friends, they work together to stop Gargamel’s plan and save Smurfette before it’s too late."
+             data-link="https://youtu.be/4KSN7mxhiYE?si=GEjzzmXk5YIWl0S5">
+
+            <div class="anime-image">
+                <img src="thesmurfs.webp" alt="Attack on Titan">
+            </div>
+
+            <div class="anime-content">
+                <h2>The Smurfs</h2>
+                <p class="details">Family • Adventure • Comedy • Fantasy</p>
+                <button class="watch-btn">Watch Trailer</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal" id="animeModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDetails"></p>
+            <a id="modalLink" target="_blank" class="full-watch-link">
+                Watch Full Anime Here
+            </a>
+        </div>
+    </div>
+
+    <script src="movie-france.js"></script>
+
+</body>
+</html>
