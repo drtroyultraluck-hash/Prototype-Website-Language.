@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyoto — Tourist Japan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tourist-japan.css">
+</head>
+
+<body>
+
+<header class="navbar glass">
+  <div class="logo">JAPAN</div>
+  <nav>
+    <a href="tourist-japan.html">Home</a>
+    <a href="tokyo.html">Tokyo</a>
+    <a href="kyoto.html">Kyoto</a>
+    <a href="osaka.html">Osaka</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="city-hero" style="background-image:url('kyoto.png')">
+  <div class="hero-content glass">
+    <h1>Kyoto</h1>
+    <p>Kyoto is the cultural heart of Japan, where centuries-old temples, traditional wooden houses, and peaceful gardens preserve the country's rich heritage. Unlike the fast-paced energy of Tokyo, Kyoto moves with quiet elegance. It is a city of tea ceremonies, geisha districts, bamboo forests, and breathtaking seasonal beauty — especially during cherry blossom and autumn foliage seasons.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <h2 class="section-title">Kyoto Gallery</h2>
+
+  <div class="cards-container">
+
+    <!-- SHIBUYA -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('fushimi.webp')"></div>
+      <div class="card-body">
+        <h3>Fushimi Inari Taisha</h3>
+        <p>Famous for its thousands of vermilion torii gates.</p>
+        <button class="open-modal"
+          data-img="fushimi.webp"
+          data-title="Fushimi Inari Taisha"
+          data-desc="Fushimi Inari Taisha is one of Kyoto's most iconic landmarks. Dedicated to the Shinto god of rice and prosperity, the shrine is best known for its thousands of bright red torii gates that form tunnels along the mountainside. Walking through the endless gates feels almost surreal, especially in the early morning when the paths are quiet and mist lingers in the forest. The hike to the summit offers peaceful scenery and panoramic views of Kyoto.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- SENSOJI -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('bamboo.jpg')"></div>
+      <div class="card-body">
+        <h3>Arashiyama Bamboo Grove</h3>
+        <p>A magical pathway surrounded by towering bamboo.</p>
+        <button class="open-modal"
+          data-img="bamboo.jpg"
+          data-title="Arashiyama Bamboo Grove"
+          data-desc="The Arashiyama Bamboo Grove is one of the most photographed natural attractions in Japan. As sunlight filters through the tall green stalks, the bamboo sways gently with the wind, creating a calming rustling sound that enhances the atmosphere. The pathway feels dreamlike and cinematic, especially during quiet hours. Nearby, visitors can explore temples, scenic river views, and traditional tea houses.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- TOKYO TOWER -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('kinkaku.jpg')"></div>
+      <div class="card-body">
+        <h3>Kinkaku-ji</h3>
+        <p>A stunning gold-covered temple beside a reflective pond.</p>
+        <button class="open-modal"
+          data-img="kinkaku.jpg"
+          data-title="Kinkaku-ji"
+          data-desc="Kinkaku-ji, also known as the Golden Pavilion, is one of Kyoto's most breathtaking sights. The top two floors of the temple are completely covered in gold leaf, creating a dazzling reflection on the surrounding pond. Originally built as a retirement villa for a shogun, it later became a Zen Buddhist temple. The surrounding gardens are carefully designed to embody harmony and balance, making it a peaceful yet visually striking destination year-round.">
+          View
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="placeModal" class="modal">
+  <div class="modal-box glass">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <img id="modalImage" src="">
+    <div class="modal-text">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const buttons = document.querySelectorAll(".open-modal");
+  const modal = document.getElementById("placeModal");
+  const modalImg = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDescription");
+  const closeBtn = document.getElementById("modalClose");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      modalImg.src = btn.dataset.img;
+      modalTitle.textContent = btn.dataset.title;
+      modalDesc.textContent = btn.dataset.desc;
+      modal.style.display = "flex";
+    });
+  });
+
+  function closeModal(){
+    modal.style.display = "none";
+    modalImg.src = "";
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if(e.target === modal){
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+      closeModal();
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>

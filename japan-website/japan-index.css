@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+
+:root {
+  --glass-bg: rgba(255,255,255,0.08);
+  --glass-border: rgba(255,255,255,0.18);
+  --glass-highlight: rgba(255,255,255,0.35);
+
+  --text-main: #f2f2f7;
+  --text-muted: #b6b6cc;
+
+  --blur-heavy: blur(22px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.88)),
+    url("https://images.unsplash.com/photo-1528360983277-13d401cdc186");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* SUBTLE TEXTURE + SAKURA */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, rgba(255,182,193,0.75) 2px, transparent 3px),
+    url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  background-size: 140px 140px, auto;
+  animation: sakuraFall 45s linear infinite;
+  opacity: 0.18;
+}
+
+@keyframes sakuraFall {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: -200px 1200px, 0 0; }
+}
+
+/* HEADER */
+
+.top-header {
+  backdrop-filter: var(--blur-heavy);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.jp-hero {
+  padding: 6rem 2rem 5.5rem;
+  text-align: center;
+  position: relative;
+}
+
+/* Torii silhouette */
+
+.jp-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 140px;
+  background: url("https://svgshare.com/i/15Yr.svg") center bottom / contain no-repeat;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.jp-hero .kanji {
+  display: block;
+  font-family: 'Sora', sans-serif;
+  font-size: 4.2rem;
+  letter-spacing: 0.32em;
+  margin-bottom: 0.4rem;
+  color: rgba(255,255,255,0.14);
+}
+
+.jp-hero h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(3rem, 6vw, 4.4rem);
+  letter-spacing: 2px;
+  margin-bottom: 0.7rem;
+  background: linear-gradient(90deg, #ffffff, #e5e5ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.jp-hero p {
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* CARD GRID */
+
+.flash-card {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
+  gap: 2.8rem;
+  padding: 5.5rem 7vw;
+  justify-content: center;
+  perspective: 1600px;
+}
+
+/* GLASS CARDS */
+
+.nav-card {
+  position: relative;
+  padding: 3rem 2rem;
+  border-radius: 28px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-main);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.04)),
+    radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent 60%);
+  backdrop-filter: var(--blur-heavy);
+  border: 1px solid var(--glass-border);
+  transform-style: preserve-3d;
+  transition: all 0.65s cubic-bezier(.16,.84,.44,1);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.75);
+}
+
+.nav-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, transparent, var(--glass-highlight), transparent);
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+.nav-card::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 70%);
+  filter: blur(20px);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.6s;
+}
+
+.nav-card:hover {
+  transform: translateY(-22px) rotateX(8deg) rotateY(-8deg) scale(1.06);
+}
+
+.nav-card:hover::before,
+.nav-card:hover::after {
+  opacity: 1;
+}
+
+/* ICONS */
+
+.material-symbols-outlined {
+  font-size: 3.6rem;
+  margin-bottom: 1.4rem;
+  filter: drop-shadow(0 0 16px rgba(255,255,255,0.45));
+  transition: transform 0.6s ease;
+}
+
+.nav-card:hover .material-symbols-outlined {
+  transform: translateZ(40px) scale(1.25);
+}
+
+/* CARD TEXT */
+
+.nav-card span:last-child {
+  display: block;
+  margin-top: 0.9rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.nav-card span:last-child::after {
+  content: "";
+  display: block;
+  margin: 0.8rem auto 0;
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent);
+}
+
+/* FADE OTHERS */
+
+.flash-card:hover .nav-card:not(:hover) {
+  opacity: 0.65;
+  transform: scale(0.96);
+}
+
+/* BACK */
+
+.back {
+  display: block;
+  text-align: center;
+  margin: 2rem auto;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.back:hover { color: #fff; }
+
+/* IMAGE INSIDE CARD */
+.nav-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-card .card-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* the actual image */
+.nav-card .card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.04);                 
+  transition: transform 0.7s cubic-bezier(.16,.84,.44,1), opacity 0.6s;
+  will-change: transform;
+  filter: saturate(0.98) contrast(0.98); 
+  opacity: 0.95;
+}
+
+.nav-card::before {
+  z-index: 2;
+}
+
+/* content (icon + text) must be on top */
+.nav-card .card-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* hover zoom on desktop */
+.nav-card:hover .card-media img,
+.nav-card.is-active .card-media img {
+  transform: scale(1.14);
+}
+
+/* gentle darken on non-hover to help text contrast (optional) */
+.nav-card .card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.22));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* FOOTER */
+
+.site-footer {
+  backdrop-filter: var(--blur-heavy);
+  background: linear-gradient(to top, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+  border-top: 1px solid var(--glass-border);
+  padding: 3.5rem 6vw;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.footer-credit {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.footer-credit span { color: var(--text-main); }
+
+.footer-copyright {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  color: #7a7aa1;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1200px) {
+  .flash-card {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .flash-card {
+    grid-template-columns: 1fr;
+    padding: 4rem 1.5rem;
+  }
+
+  .jp-hero .kanji {
+    font-size: 3.2rem;
+  }
+}
+
+/* Prevent hover insanity on touch devices */
+@media (hover: none) {
+  .nav-card:hover {
+    transform: none;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.65);
+  }
+
+  .nav-card::before,
+  .nav-card::after {
+    display: none;
+  }
+
+  .flash-card:hover .nav-card:not(:hover) {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .jp-hero {
+    padding: 4.5rem 1.8rem 4rem;
+  }
+
+  .jp-hero .kanji {
+    font-size: 3rem;
+  }
+
+  .jp-hero h1 {
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
+  }
+
+  .flash-card {
+    gap: 2rem;
+    padding: 4rem 5vw;
+  }
+
+  .nav-card {
+    padding: 2.2rem 1.6rem;
+  }
+
+  .material-symbols-outlined {
+    font-size: 2.9rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .jp-hero {
+    padding: 4rem 1.4rem 3.5rem;
+  }
+
+  .jp-hero::after {
+    height: 80px;
+  }
+
+  .jp-hero .kanji {
+    font-size: 2.4rem;
+    letter-spacing: 0.22em;
+  }
+
+  .jp-hero h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+  }
+
+  .jp-hero p {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+  }
+
+  .flash-card {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    padding: 3.5rem 1.3rem;
+    perspective: none;
+  }
+
+  .nav-card {
+    padding: 2rem 1.4rem;
+    border-radius: 20px;
+  }
+
+  .material-symbols-outlined {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .nav-card span:last-child {
+    font-size: 0.95rem;
+  }
+
+  .site-footer {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 380px) {
+  .jp-hero h1 {
+    font-size: 2rem;
+  }
+
+  .nav-card {
+    padding: 1.8rem 1.2rem;
+  }
+}
+
+
+
+
