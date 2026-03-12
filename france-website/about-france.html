@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>All About France</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="about-france.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- SITE NAVBAR -->
+<header class="site-navbar glass" role="banner">
+  <a href="france-index.html" class="back-btn glass" aria-label="Back to index">EXIT</a>
+
+  <nav class="site-nav" role="navigation" aria-label="About France navigation">
+    <a href="#aboutHeader">About</a>
+    <a href="#facts">Quick Facts</a>
+    <a href="#festival">Festival</a>
+    <a href="#trivia">Trivia</a>
+  </nav>
+</header>
+
+<header class="page-header" id="aboutCard">
+  <h1>ALL ABOUT FRANCE</h1>
+  <div class="divider"></div>
+</header>
+
+<main class="content">
+
+  <!-- EXPANDABLE MAIN CARD -->
+  <section class="about-section" id="aboutHeader">
+    <div class="about-card">
+      <div class="about-text">
+        <p>
+        <img src="aboutfrance.png"><br>
+          France is a country famed for its art, cuisine, and varied landscapes.
+        </p>
+
+        <div class="extra-content">
+          <p>
+            From its roots in ancient Gaul and the Roman era through the rise of medieval kingdoms, the country evolved into a powerful absolute monarchy by the early modern period. The upheavals of the late 18th century—most notably the French Revolution—overturned old institutions and helped spread ideas of citizenship, rights, and secular government across Europe. The 19th and early 20th centuries brought industrialization, imperial expansion, and repeated political change; two world wars in the 20th century deeply affected its society and borders, and the postwar era saw reconstruction, decolonization, and the creation of stable republican institutions that shape the nation today.<br><br>
+
+            Culturally, the country has been a major center of literature, philosophy, visual arts, fashion, and gastronomy, with its language and cultural institutions exerting strong global influence. Politically and economically, it is an important actor in Europe and the wider world—contributing to international diplomacy, science, and the arts—while facing modern challenges such as social inequality, migration, and debates over identity and secularism. Its long history of innovation and public debate continues to inform both domestic life and its role on the global stage.
+          </p>
+        </div>
+      </div>
+
+      <button class="expand-btn" id="expandBtn">
+        Expand
+      </button>
+    </div>
+  </section>
+
+  <div class="divider soft"></div>
+
+  <!-- QUICK FACTS -->
+  <section class="facts-section" id="facts">
+    <h2 class="small-header">Quick Facts</h2>
+
+    <div class="facts-grid">
+
+      <!-- CARD 1 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="eiffeltower.avif">
+            <span>THE EIFFEL TOWER</span>
+          </div>
+          <div class="flip-back">The Eiffel Tower was supposed to be temporary, but it became France's most famous landmark.</div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="frenchlanguage.webp">
+            <span>FRENCH LANGUAGE</span>
+          </div>
+          <div class="flip-back">French is spoken on five continents and is one of the most studied languages in the world.</div>       
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="frenchrevolution.avif">
+            <span>THE FRENCH REVOLUTION</span>
+          </div>
+          <div class="flip-back">The Revolution of 1789 changed France forever and inspired ideas of liberty and equality worldwide.</div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="map.png">
+            <span>LARGEST COUNTRY IN THE EU</span>
+          </div>
+          <div class="flip-back">France is the largest country in the European Union by land area.</div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="cuisine.webp">
+            <span>FAMOUS CUISINE</span>
+          </div>
+          <div class="flip-back">French cuisine is so influential that UNESCO recognized it as part of the world's cultural heritage.</div>
+        </div>
+      </div>
+
+       <!-- CARD 6-->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="artcapital.jpg">
+            <span>ART CAPITAL</span>
+          </div>
+          <div class="flip-back">Paris has been home to legendary artists like Monet and Picasso.</div>
+        </div>
+      </div>
+
+       <!-- CARD 7 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="motto.avif">
+            <span>MOTTO</span>
+          </div>
+          <div class="flip-back">France's national motto is “Liberté, Égalité, Fraternité,” meaning Liberty, Equality, Brotherhood.</div>
+        </div>
+      </div>
+
+      <!-- CARD 8 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="tour.webp">
+            <span>TOUR DE FRANCE</span>
+          </div>
+          <div class="flip-back">The Tour de France is the world's most famous cycling race.</div>
+        </div>
+      </div>
+
+    </div>
+    <h4>Click to flip</h4>
+  </section>
+
+ <!-- Modal -->
+  <div id="cardModal" class="card-modal-overlay">
+    <div class="card-modal-center">
+    <div class="card-modal-content">
+    <span id="cardModalClose" class="card-modal-close">&times;</span>
+    <div class="modal-scroll">
+    <img id="modalImage" class="modal-image" alt="">
+    <h2 id="modalTitle">Title</h2>
+    <p id="modalText">Content goes here...</p>
+  </div>
+  </div>
+  </div>
+</div>
+
+  <section class="festival-section" id="festival">
+
+  <div class="divider soft"></div>
+  <h2 class="small-header">Festival Snapshot</h2>
+  <div class="festival-box">
+  <div class="festival-scroll">
+
+    <!-- CARD 1 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Bastille Day"
+       data-img="bastilleday.jpg"
+       data-content="Bastille Day is celebrated every July 14 and marks the storming of the Bastille in 1789. It is France's national holiday, featuring grand military parades in Paris, fireworks, concerts, and festive gatherings across the country to honor liberty and unity.">
+      <img src="bastilleday.jpg" class="festival-image" alt="">
+      <span class="festival-title">BASTILLE DAY</span>
+    </a>
+
+    <!-- CARD 2 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Cannes Film Festival"
+       data-img="cannesfilmfestival.jpg"
+       data-content="Cannes Film Festival takes place every May in Cannes and is one of the most prestigious film festivals in the world. It showcases international films, attracts global celebrities, and premieres highly anticipated movies on the famous red carpet.">
+      <img src="cannesfilmfestival.jpg" class="festival-image" alt="">
+      <span class="festival-title">CANNES FILM FESTIVAL</span>
+    </a>
+
+    <!-- CARD 3 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Nice Festival"
+       data-img="nicefestival.jpg"
+       data-content="Nice Carnival is held every February and is among the largest carnivals globally. It is known for its colorful parades, giant decorative floats, flower battles, and lively street performances along the French Riviera.">
+      <img src="nicefestival.jpg" class="festival-image" alt="">
+      <span class="festival-title">NICE FESTIVAL<span>
+    </a>
+
+    <!-- CARD 4 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Fête de la Musique"
+       data-img="fetedelamusique.jpeg"
+       data-content="Fête de la Musique is celebrated every June 21, welcoming the start of summer with free music performances nationwide. Professional and amateur musicians fill streets, parks, and public spaces with diverse musical styles.">
+      <img src="fetedelamusique.jpeg" class="festival-image" alt="">
+      <span class="festival-title">FÊTE DE LA MUSIQUE</span>
+    </a>
+
+    <!-- CARD 5 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Festival d'Avignon"
+       data-img="avignon.jpg"
+       data-content="Festival d'Avignon, founded in 1947, is a major performing arts event held every July. It transforms the historic city of Avignon into a stage for theater, dance, and experimental productions.">
+      <img src="avignon.jpg" class="festival-image" alt="">
+      <span class="festival-title">FESTIVAL D'AVIGNON</span>
+    </a>
+
+    <!-- CARD 6 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Nuit Blanche"
+       data-img="nuitblanche.jpg"
+       data-content="Nuit Blanche is an annual all-night arts festival in Paris held every October. Museums, galleries, and public spaces remain open late, offering free contemporary art exhibitions and performances throughout the city.">
+      <img src="nuitblanche.jpg" class="festival-image" alt="">
+      <span class="festival-title">NUIT BLANCHE</span>
+    </a>
+
+    <!-- CARD 7 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Mentone Lemon Festival"
+       data-img="mentonelemon.jpg"
+       data-content="Mentone Lemon Festival takes place in February in Menton. The festival is famous for its enormous sculptures and parade floats made entirely from lemons and oranges.">
+      <img src="mentonelemon.jpg" class="festival-image" alt="">
+      <span class="festival-title">MENTONE LEMON</span>
+    </a>
+
+    <!-- CARD 8 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Fête des Lumières"
+       data-img="lumieres.jpg"
+       data-content="Fête des Lumières is celebrated each December in Lyon. During this event, the city glows with artistic light displays, projections, and installations that attract millions of visitors.">
+      <img src="lumieres.jpg" class="festival-image" alt="">
+      <span class="festival-title">FÊTE DES LUMIÈRES</span>
+    </a>
+
+  </div>
+  </div>
+</section>
+
+<div class="divider soft"></div>
+<section class="cultural-shock-section" id="trivia">
+  <h2 class="small-header">Trivia</h2>
+
+  <div class="playlist-container">
+
+    <!-- ITEM 1 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="The French Kiss"
+       data-img="frenchkiss.jpg"
+       data-content="The term “French kiss” was added to the English dictionary in the 1920s, associating romance with French culture.">
+      <img src="frenchkiss-icon.jpg" alt="" class="playlist-cover">
+      <span class="playlist-title">THE FRENCH KISS</span>
+    </a>
+
+    <!-- ITEM 2 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="The Eiffel Tower Grows"
+       data-img="eiffeltowergrows.png"
+       data-content="The Eiffel Tower can grow about 15 cm taller in summer because metal expands in heat.">
+      <img src="eifeltowergrows-icon.avif" alt="" class="playlist-cover">
+      <span class="playlist-title">THE EIFFEL TOWER GROWS</span>
+    </a>
+
+    <!-- ITEM 3 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="Say 'Bonjour' First "
+       data-img="bonjour.png"
+       data-content="n France, it's considered rude to start a conversation without saying “Bonjour” first, even in shops.">
+      <img src="bonjour-icon.png" alt="" class="playlist-cover">
+      <span class="playlist-title">SAY "BONJOUR" FIRST</span>
+    </a>
+
+    <!-- ITEM 4 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="Bread Law"
+       data-img="breadlaw.avif"
+       data-content="By law, a traditional French baguette can only be made with four ingredients: flour, water, yeast, and salt.">
+      <img src="bread-icon.png" alt="" class="playlist-cover">
+      <span class="playlist-title">BREAD LAW</span>
+    </a>
+
+    <!-- ITEM 5 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="World's Most Visited Country"
+       data-img="tourist.jpg"
+       data-content="France is the most visited country in the world, welcoming millions of tourists every year.">
+      <img src="tourist-icon.jpg" alt="" class="playlist-cover">
+      <span class="playlist-title">WORLD'S MOST VISITED COUNTRY</span>
+    </a>
+
+    <!-- ITEM 6 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="Cheese Heaven"
+       data-img="cheeseheaven.jpg"
+       data-content="France produces over 1,000 types of cheese, making it one of the most diverse cheese cultures globally.">
+      <img src="cheese-icon.png" alt="" class="playlist-cover">
+      <span class="playlist-title">CHEESE HEAVEN</span>
+    </a>
+
+    <!-- ITEM 7 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="Longest River"
+       data-img="longestriver.webp"
+       data-content="The Loire River is the longest river in France and is famous for its beautiful castles.">
+      <img src="longestriver-icon.jpg" alt="" class="playlist-cover">
+      <span class="playlist-title">LONGEST RIVER</span>
+    </a>
+
+    <!-- ITEM 8 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="Art Treasure"
+       data-img="art.webp"
+       data-content="The Louvre Museum in Paris is the largest art museum in the world and home to the Mona Lisa.">
+      <img src="art icon.png" alt="" class="playlist-cover">
+      <span class="playlist-title">ART TRASURE</span>
+    </a>
+
+    <!-- ITEM 9 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="12 Time Zones"
+       data-img="timezones.gif"
+       data-content="France has 12 time zones due to its overseas territories, more than any other country.">
+      <img src="time-icon.jpg" alt="" class="playlist-cover">
+      <span class="playlist-title">12 TIME ZONES</span>
+    </a>
+
+    <!-- ITEM 10 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="Free Water in Restaurants"
+       data-img="freewater.jpg"
+       data-content="In France, restaurants are required to provide free tap water if you ask for it.">
+      <img src="freewater-icon.png" alt="" class="playlist-cover">
+      <span class="playlist-title">FREE WATER IN RESTAURANTS </span>
+    </a>
+
+
+    </div>
+  </section>
+
+
+</main>
+
+<a href="france-index.html" class="back-home">← Back</a>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-credit">
+       <span></span>
+    </p>
+    <p class="footer-copyright">
+      © 2026 All rights reserved.
+    </p>
+  </div>
+</footer>
+
+
+<script src="about-france.js"></script>
+</body>
+</html>
