@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barcelona Spain</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tourist-spain.css">
+</head>
+
+<body>
+
+<header class="navbar glass">
+  <div class="logo">SPAIN</div>
+  <nav>
+    <a href="tourist-spain.html">Home</a>
+    <a href="madrid.html">Madrid</a>
+    <a href="barcelona.html">Barcelona</a>
+    <a href="seville.html">Seville</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="city-hero" style="background-image:url('barcelona.jpg')">
+  <div class="hero-content glass">
+    <h1>Barcelona<h1>
+    <p>Barcelona is a coastal city famous for its artistic heritage, modernist architecture, and Mediterranean atmosphere. It blends beach life with bold creativity and strong Catalan identity.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <h2 class="section-title">Barcelona Gallery</h2>
+
+  <div class="cards-container">
+
+    <!-- NICE -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('b1.avif')"></div>
+      <div class="card-body">
+        <h3>La Sagrada Familia</h3>
+        <p>A world-famous basilica designed by Antoni Gaudí, still under construction.</p>
+        <button class="open-modal"
+          data-img="b1.avif"
+          data-title="La Sagrada Familia"
+          data-desc="Construction of La Sagrada Família began in 1882 and continues today, making it one of the longest-running architectural projects in history. Designed by Antoni Gaudí, the basilica features towering spires, intricate façades, and colorful stained-glass windows. It is a masterpiece of modernist architecture and one of Spain’s most visited attractions.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- CASTLE HILL -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('b2.jpg')"></div>
+      <div class="card-body">
+        <h3>Park Güell</h3>
+        <p>A colorful hilltop park filled with Gaudí’s imaginative designs.</p>
+        <button class="open-modal"
+          data-img="b2.jpg"
+          data-title="Park Güell"
+          data-desc="Park Güell is a public park decorated with mosaic-covered structures, winding benches, and whimsical sculptures. Originally planned as a residential area, it became a public park and now offers panoramic views of Barcelona. Its vibrant tiles and organic shapes reflect Gaudí’s unique artistic vision.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- NICE CATHEDRAL -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('b3.avif')"></div>
+      <div class="card-body">
+        <h3>La Rambla</h3>
+        <p>Barcelona’s most famous pedestrian street.</p>
+        <button class="open-modal"
+          data-img="b3.avif"
+          data-title="La Rambla"
+          data-desc="Stretching from Plaça de Catalunya to the waterfront, La Rambla is a lively boulevard lined with shops, cafés, and street performers. It serves as the heart of the city’s social life, attracting both locals and tourists. The street captures Barcelona’s energetic and welcoming atmosphere.">
+          View
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="placeModal" class="modal">
+  <div class="modal-box glass">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <img id="modalImage" src="">
+    <div class="modal-text">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const buttons = document.querySelectorAll(".open-modal");
+  const modal = document.getElementById("placeModal");
+  const modalImg = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDescription");
+  const closeBtn = document.getElementById("modalClose");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      modalImg.src = btn.dataset.img;
+      modalTitle.textContent = btn.dataset.title;
+      modalDesc.textContent = btn.dataset.desc;
+      modal.style.display = "flex";
+    });
+  });
+
+  function closeModal(){
+    modal.style.display = "none";
+    modalImg.src = "";
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if(e.target === modal){
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+      closeModal();
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>
