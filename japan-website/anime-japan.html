@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anime Japan Recommendations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylish Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="anime-japan.css">
+</head>
+<body>
+
+    <!-- SITE NAVBAR (ADD AFTER <body>) -->
+<header class="site-navbar glass" role="banner">
+  <a href="japan-index.html" class="back-btn glass" aria-label="Back to index">EXIT</a>
+
+  <nav class="site-nav" role="navigation" aria-label="About Japan navigation">
+    <a href="#anime">Anime To Watch</a>
+  </nav>
+</header>
+
+    <div class="background-overlay"></div>
+
+    <!-- TITLE OUTSIDE -->
+    <h1 class="main-title">ANIME TO WATCH</h1>
+    <div class="divider"></div>
+
+    <!-- LIST CONTAINER WRAPPER -->
+    <div class="list-wrapper" id="anime">
+
+        <!-- ANIME 1 -->
+        <div class="anime-card" data-title="Your Name (Kimi no Na wa)"
+             data-details="Genre: Romance, Supernatural, Drama<br>Release: 2016<br>Director: Makoto Shinkai<br><br>A breathtaking story of two strangers mysteriously connected through dreams and time."
+             data-link="https://www.crunchyroll.com">
+
+            <div class="anime-image">
+                <img src=yourname.jpeg alt="Your Name">
+            </div>
+
+            <div class="anime-content">
+                <h2>Your Name</h2>
+                <p class="details">Romance • Fantasy • Drama</p>
+                <button class="watch-btn">Watch Trailer</button>
+            </div>
+        </div>
+
+        <!-- ANIME 2 -->
+        <div class="anime-card" data-title="Demon Slayer"
+             data-details="Genre: Action, Fantasy<br>Release: 2019<br><br>Tanjiro Kamado becomes a demon slayer after his family is slaughtered by demons."
+             data-link="https://www.netflix.com">
+
+            <div class="anime-image">
+                <img src=demonslayer.jpg alt="Demon Slayer">
+            </div>
+
+            <div class="anime-content">
+                <h2>Demon Slayer</h2>
+                <p class="details">Action • Dark Fantasy</p>
+                <button class="watch-btn">Watch Trailer</button>
+            </div>
+        </div>
+
+        <!-- ANIME 3 -->
+        <div class="anime-card" data-title="Attack on Titan"
+             data-details="Genre: Action, Drama<br>Release: 2013<br><br>Humanity fights for survival against gigantic humanoid Titans."
+             data-link="https://www.hulu.com">
+
+            <div class="anime-image">
+                <img src=attackontitan.jpg alt="Attack on Titan">
+            </div>
+
+            <div class="anime-content">
+                <h2>Attack on Titan</h2>
+                <p class="details">Action • Thriller • Drama</p>
+                <button class="watch-btn">Watch Trailer</button>
+            </div>
+        </div>
+
+         <!-- ANIME 4 -->
+        <div class="anime-card" data-title="Fairy Tail"
+             data-details="Genre: Action, Adventure, Comedy, Fantasy<br>Release: 2006 - 2017<br><br>Fairy Tail (TV Series 2009–2019) - IMDbFairy Tail is a popular Japanese manga and anime series created by Hiro Mashima, following the adventures of Natsu Dragneel and the rowdy, powerful members of the titular wizards' guild in the kingdom of Fiore. The series emphasizes themes of friendship, adventure, and overcoming insurmountable odds through magical combat."
+             data-link="https://youtu.be/4KSN7mxhiYE?si=GEjzzmXk5YIWl0S5">
+
+            <div class="anime-image">
+                <img src=fairytail.webp alt="Attack on Titan">
+            </div>
+
+            <div class="anime-content">
+                <h2>Fairy Tail</h2>
+                <p class="details">Action • Adventure • Comedy • Fantasy</p>
+                <button class="watch-btn">Watch Trailer</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal" id="animeModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDetails"></p>
+            <a id="modalLink" target="_blank" class="full-watch-link">
+                Watch Full Anime Here
+            </a>
+        </div>
+    </div>
+
+    <script src="anime-japan.js"></script>
+
+</body>
+</html>
