@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>All About Japan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="about-japan.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- SITE NAVBAR -->
+<header class="site-navbar glass" role="banner">
+  <a href="japan-index.html" class="back-btn glass" aria-label="Back to index">EXIT</a>
+
+  <nav class="site-nav" role="navigation" aria-label="About Japan navigation">
+    <a href="#aboutCard">About</a>
+    <a href="#facts">Quick Facts</a>
+    <a href="#writing">Writing System</a>
+    <a href="#festival">Festival</a>
+    <a href="#trivia">Trivia</a>
+  </nav>
+</header>
+
+
+<header class="page-header">
+  <h1>ALL ABOUT JAPAN</h1>
+  <div class="divider"></div>
+</header>
+
+<main class="content">
+
+  
+
+  <!-- EXPANDABLE MAIN CARD -->
+  <section class="about-section">
+    <div class="about-card" id="aboutCard">
+      <div class="about-text">
+        <p>
+        <img src="japanmap.png"><br>
+          Japan is an island nation in East Asia known for its advanced technology, strong social discipline, and deep respect for tradition and nature.
+        </p>
+
+        <div class="extra-content">
+          <p>
+            Japan combines modern development with centuries-old cultural practices that continue to shape everyday life. Social harmony and respect influence behavior in public spaces, resulting in orderly cities, quiet transportation systems, and highly punctual public services. The country's limited land area and frequent earthquakes have driven innovative urban planning, compact housing designs, and some of the world's strictest building standards.<br><br>
+
+            Seasonal awareness plays a major role in Japanese culture, with natural events such as cherry blossom season and autumn foliage influencing festivals, travel, and daily routines. Governed as a constitutional monarchy, Japan maintains a high standard of living and one of the longest life expectancies globally. Trust, efficiency, and community responsibility remain central values that support Japan's low crime rates and reliable infrastructure.
+          </p>
+        </div>
+      </div>
+
+      <button class="expand-btn" id="expandBtn">
+        Expand
+      </button>
+    </div>
+  </section>
+
+  <div class="divider soft"></div>
+
+  <!-- QUICK FACTS -->
+  <section class="facts-section" id="facts">
+    <h2 class="small-header">Quick Facts</h2>
+
+    <div class="facts-grid">
+
+      <!-- CARD 1 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="population.png">
+            <span>POPULATION</span>
+          </div>
+          <div class="flip-back">The population of Japan is around 123 Million.</div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="sleepatwork.png">
+            <span>SLEEP AT WORK</span>
+          </div>
+          <div class="flip-back">Falling asleep at work (inemuri) can be seen as sign of dedication, not laziness.</div>       
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="umbrella.png">
+            <span>UMBRELLA CULTURE</span>
+          </div>
+          <div class="flip-back">Public umbrella stands exist because umbrella theft is rare.</div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="vendingmachines.png">
+            <span>VENDING MACHINES</span>
+          </div>
+          <div class="flip-back">Japan has over 5 million vending machines, selling not just drinks, but hot meals, umbrellas, and even neckties.</div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="boyfriend.jpeg">
+            <span>BOYFRIEND RENTAL</span>
+          </div>
+          <div class="flip-back">Boyfriend rental is a legal service where people pay by the hour for non-romantic companionship and emotional support.</div>
+        </div>
+      </div>
+
+       <!-- CARD 6-->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="lostitems.png">
+            <span>LOST ITEMS</span>
+          </div>
+          <div class="flip-back">Lost wallets are commonly returned intact, often while the money still inside.</div>
+        </div>
+      </div>
+
+       <!-- CARD 7 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="bullettrain.png">
+            <span>TRAIN APOLOGIES</span>
+          </div>
+          <div class="flip-back">A train company once issued a formal apology for departing 20 seconds early.</div>
+        </div>
+      </div>
+
+      <!-- CARD 8 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="hotelcapsule.png">
+            <span>CAPSULE HOTELS</span>
+          </div>
+          <div class="flip-back">Some hotels offer rooms so small that they are barely larger than a bed, yet fully functional and popular.</div>
+        </div>
+      </div>
+
+    </div>
+    <h4>Click to flip</h4>
+  </section>
+
+  <div class="divider soft"></div>
+
+<section class="writing-system-section">
+  <h2 class="small-header">Writing System</h2>
+
+  <div class="writing-cards" id="writing">
+    <!-- HIRAGANA -->
+    <a href="#"
+    class="writing-card"
+    data-title="Hiragana"
+    data-img="hiragana-char.jpg"
+    data-content="Hiragana is the curvy, flowing alphabet of Japan, used for native Japanese words, grammar endings, and particles. It's usually the first writing system kids learn and gives sentences their soft, readable rhythm—like the backbone of Japanese text.">
+      <img src="hiragana.png" class="writing-icon" alt=hiragana>
+      <div class="writing-separator"></div>
+      <span class="writing-label">Hiragana</span>
+    </a>
+
+    <!-- KATAKANA -->
+    <a href="#"
+    class="writing-card"
+    data-title="Katakana"
+    data-img="katakana-char.jpg"
+    data-content="Katakana is the sharp, angular alphabet used for foreign words, loanwords, onomatopoeia, and emphasis. Think of it as the “pop star” of Japanese writing—it stands out and makes words like “coffee” (コーヒー) or “pizza” (ピザ) look instantly Japanese.">
+      <img src="katakana.png" class="writing-icon" alt="katakana">
+      <div class="writing-separator"></div>
+      <span class="writing-label">Katakana</span>
+    </a>
+
+    <!-- KANJI -->
+    <a href="#"
+    class="writing-card"
+    data-title="Kanji"
+    data-img="kanjin5.jpg"
+    data-content="Kanji are the complex characters borrowed from Chinese, each representing a full word or concept. They make reading faster by packing meanings into symbols—like 木 for “tree” or 学 for “study”—and give Japanese writing its artistic, elegant flair.">
+      <img src="kanji.png" class="writing-icon" alt="kanji">
+      <div class="writing-separator"></div>
+      <span class="writing-label">Kanji</span>
+    </a>
+  </div>
+
+  </div>
+</section>
+
+ <!-- Modal -->
+  <div id="cardModal" class="card-modal-overlay">
+    <div class="card-modal-center">
+    <div class="card-modal-content">
+    <span id="cardModalClose" class="card-modal-close">&times;</span>
+    <div class="modal-scroll">
+    <img id="modalImage" class="modal-image" alt="">
+    <h2 id="modalTitle">Title</h2>
+    <p id="modalText">Content goes here...</p>
+  </div>
+  </div>
+  </div>
+</div>
+
+  <section class="festival-section" id="festival">
+
+  <div class="divider soft"></div>
+  <h2 class="small-header">Festival Snapshot</h2>
+  <div class="festival-box">
+  <div class="festival-scroll">
+
+    <!-- CARD 1 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Hanami (Cherry Blossom Festival)"
+       data-img="hanami.png"
+       data-content="This is Japan's ultimate “pause your life and feel something” season. For a few short weeks, cherry blossoms bloom all over the country, and people drop everything just to sit under pink trees and exist. Friends picnic, couples take soft photos, and coworkers suddenly become poets. The catch? The flowers fall in days. That's the whole point. Hanami teaches that beauty is temporary, and that knowing it won't last makes it even more meaningful. Soft, emotional, main-character energy.">
+      <img src="hanami.png" class="festival-image" alt="">
+      <span class="festival-title">HANAMI</span>
+    </a>
+
+    <!-- CARD 2 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Gion Matsuri (Kyoto)"
+       data-img="gion.png"
+       data-content="Gion Matsuri is Kyoto flexing its thousand-year-old elegance. For the whole month of July, the city fills with lanterns, traditional music, and massive wooden floats that look like moving museums. The biggest parades happen mid-month, when the streets are packed with people in yukata. It began over 1,000 years ago as a ritual to stop disease—now it's tradition, luxury, and history walking together. Old money vibes, but cultural.">
+      <img src="gion.png" class="festival-image" alt="">
+      <span class="festival-title">GION MATSURI</span>
+    </a>
+
+    <!-- CARD 3 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Sapporo Snow Festival (Yuki Matsuri)"
+       data-img="yuki.png"
+       data-content="Japan really said, “Let's turn winter into art.” Every February, Sapporo becomes a frozen fantasy with gigantic snow and ice sculptures—some taller than buildings. From famous landmarks to anime characters, everything is carved out of snow. What started as a small local project is now a global event. It's cold, yes—but visually insane and cozy at the same time. Proof that Japan doesn't cancel plans because of weather.">
+      <img src="yuki.png" class="festival-image" alt="">
+      <span class="festival-title">YUKI MATSURI</span>
+    </a>
+
+    <!-- CARD 4 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Nebuta Matsuri (Aomori)"
+       data-img="nebuta.png"
+       data-content="Nebuta Matsuri is loud, bright, and unapologetically intense. Giant glowing warrior floats light up the night while drums hit hard and dancers jump nonstop through the streets. It originally existed to chase away evil spirits and summer sleepiness—but now it chases away boredom entirely. The energy is wild, the colors are aggressive, and the vibe is pure festival chaos. History, but make it electric.">
+      <img src="nebuta.png" class="festival-image" alt="">
+      <span class="festival-title">NEBUTA MATSURI</span>
+    </a>
+
+    <!-- CARD 5 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Star Festival (Tabanata)"
+       data-img="tabanata.png"
+       data-content="Tanabata is Japan's manifestation era. Based on a tragic love story between two stars who meet only once a year, people write wishes on colorful paper and hang them on bamboo. Streets turn into dreamy corridors of flowing decorations. It's soft, hopeful, and slightly delulu—in the best way. Tanabata isn't about guaranteed results; it's about believing enough to write your dreams down.">
+      <img src="tabanata.png" class="festival-image" alt="">
+      <span class="festival-title">TABANATA</span>
+    </a>
+
+    <!-- CARD 6 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Awa Odori (Tokushima)"
+       data-img="awa.png"
+       data-content="Awa Odori is the festival version of “just vibe.” Thousands of people dance through the streets with simple steps that anyone can copy—no talent required, just energy. There's even a saying: “The dancers are fools, the watchers are fools—so why not dance?” And honestly? That's a life philosophy. Joyful, chaotic, and freeing, Awa Odori proves fun doesn't need perfection.">
+      <img src="awa.png" class="festival-image" alt="">
+      <span class="festival-title">AWA ODORI</span>
+    </a>
+
+    <!-- CARD 7 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Obon Festival"
+       data-img="obon.png"
+       data-content="Obon is quiet, emotional, and deeply meaningful. Families return to their hometowns to honor their ancestors, lighting lanterns to guide spirits home. There are traditional dances, prayers, and moments of reflection. It's not flashy—but it hits deep. In a fast-moving world, Obon is a reminder to slow down and remember where you came from. Healing energy, every year.">
+      <img src="obon.png" class="festival-image" alt="">
+      <span class="festival-title">OBON</span>
+    </a>
+
+    <!-- CARD 8 -->
+    <a href="#"
+       class="festival-card writing-card"
+       data-title="Kanda Matsuri (Tokyo)"
+       data-img="kanda.png"
+       data-content="Kanda Matsuri is Tokyo in festival form—loud, crowded, and high-energy. People carry heavy portable shrines through the streets while chanting like they're powering up. Businesses join to pray for success, blending tradition with hustle culture. It's chaotic but spiritual, intense but meaningful. Very Tokyo: fast-paced, noisy, and still sacred underneath it all.">
+      <img src="kanda.png" class="festival-image" alt="">
+      <span class="festival-title">KANDA MATSURI</span>
+    </a>
+
+  </div>
+  </div>
+</section>
+
+<div class="divider soft"></div>
+<section class="cultural-shock-section" id="trivia">
+  <h2 class="small-header">Trivia</h2>
+
+  <div class="playlist-container">
+
+    <!-- ITEM 1 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="Silence on Trains"
+       data-img="quiettrain.png"
+       data-content="Trains can be packed like sardines, yet it's almost library-level quiet. People avoid phone calls and keep conversations low out of respect for others. The silence isn't awkward—it's polite.">
+      <img src="quiet.jpg" alt="" class="playlist-cover">
+      <span class="playlist-title">SILENCE ON TRAINS</span>
+    </a>
+
+    <!-- ITEM 2 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="No Tipping, Ever"
+       data-img="notiprefuse.png"
+       data-content="Tipping doesn't exist in Japan. Leaving extra money can actually confuse or embarrass staff because good service is expected, not rewarded separately.">
+      <img src="notip.jpg" alt="" class="playlist-cover">
+      <span class="playlist-title">NO TIPPING, EVER</span>
+    </a>
+
+    <!-- ITEM 3 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="Public Trash Bins are Rare"
+       data-img="trashbin.png"
+       data-content="Despite the lack of trash cans, the streets are incredibly clean. People simply carry their trash home. Cleanliness here is a personal responsibility, not a convenience.">
+      <img src="trash.webp" alt="" class="playlist-cover">
+      <span class="playlist-title">PUBLIC TRASH BINS ARE RARE</span>
+    </a>
+
+    <!-- ITEM 4 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="Shoes Off Culture"
+       data-img="shoesoff.png"
+       data-content="Shoes come off in homes, some restaurants, temples, and even schools. Slippers are provided, and there are even special slippers just for the bathroom.">
+      <img src="noshoes.jpg" alt="" class="playlist-cover">
+      <span class="playlist-title">SHOES OFF CULTURE</span>
+    </a>
+
+    <!-- ITEM 5 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="Sticking Chopsticks in Rice"
+       data-img="chopsticksricerude.png"
+       data-content="Yes—never stick chopsticks upright into rice. It resembles a ritual at funerals where rice is offered to the dead. Doing this at the table is considered disrespectful and bad luck.">
+      <img src="chopstickrice.webp" alt="" class="playlist-cover">
+      <span class="playlist-title">STICKING CHOPSTICS IN RICE</span>
+    </a>
+
+    <!-- ITEM 6 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="Passing Food Chopstick-to-Chopstick"
+       data-img="foodpass.png"
+       data-content="Passing food directly from your chopsticks to someone else's is also a funeral ritual (passing bones of the deceased). So in normal dining, it's a big no-no.">
+      <img src="passingfood.jpeg" alt="" class="playlist-cover">
+      <span class="playlist-title">PASSING FOOD CHOPSTICK-TO-CHOPSTICK</span>
+    </a>
+
+    <!-- ITEM 7 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="Slurping Noodles"
+       data-img="noodlesslurp.png"
+       data-content="Sounds gross at first—but actually, slurping noodles like ramen is good manners. It shows you're enjoying the food and helps cool down hot noodles. Surprise: some “gross” habits are polite there.">
+      <img src="slurpingnoodles.jpg" alt="" class="playlist-cover">
+      <span class="playlist-title">SLURPING NOODLES</span>
+    </a>
+
+    <!-- ITEM 8 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="Don't Jump in Dirty: The Public Bath Shock"
+       data-img="shower.png"
+       data-content="In Japan's public baths (onsen and sento), the hot water isn't for washing—you must scrub and rinse yourself first at the shower stations. Jumping straight in with soap or sweat still on you is considered extremely rude and will make locals side-eye you. So yes, even relaxing in steamy water comes with strict rules: clean first, soak second, or risk the ultimate bath shame.">
+      <img src="showerfirst.avif" alt="" class="playlist-cover">
+      <span class="playlist-title">DON'T JUMP IN DIRTY: THE PUBLIC BATH SHOCK</span>
+    </a>
+
+    <!-- ITEM 9 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="Walking While Eating? Not in Japan"
+       data-img="eatwalk.png"
+       data-content="In Japan, walking while eating is considered rude and sloppy. Street food is meant to be enjoyed on the spot, often at designated eating areas or standing counters. Locals believe eating while moving is messy, disrespectful, and shows a lack of mindfulness. So yes, even grabbing a snack from a convenience store? Pause, eat, then move—or risk the side-eye from seasoned pedestrians.">
+      <img src="noeatwhilewalk.jpeg" alt="" class="playlist-cover">
+      <span class="playlist-title">WALKING WHILE EATING? NOT IN JAPAN</span>
+    </a>
+
+    <!-- ITEM 10 -->
+    <a href="#"
+       class="playlist-item writing-card"
+       data-title="No Tattoos in Public Baths"
+       data-img="tattoo.png"
+       data-content="Even if you're a tourist, tattoos can get you banned from onsen and sento. Tattoos have historical ties to the Yakuza, so some baths enforce strict rules. Cover-up stickers exist, but locals take this etiquette seriously.">
+      <img src="notattoo.jpg" alt="" class="playlist-cover">
+      <span class="playlist-title">NO TATTOOS IN PUBLIC BATHS</span>
+    </a>
+
+
+    </div>
+  </section>
+
+
+</main>
+
+<a href="japan-index.html" class="back-home">← Back</a>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-credit">
+       <span></span>
+    </p>
+    <p class="footer-copyright">
+      © 2026 All rights reserved.
+    </p>
+  </div>
+</footer>
+
+
+<script src="about-japan.js"></script>
+</body>
+</html>
