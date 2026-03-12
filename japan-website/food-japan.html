@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="food-japan.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <title>Types of Foods in Japan Card Slider</title>
+</head>
+<body>
+
+  <!-- SITE NAVBAR (ADD AFTER <body>) -->
+<header class="site-navbar glass" role="banner">
+  <a href="japan-index.html" class="back-btn glass" aria-label="Back to index">EXIT</a>
+
+  <nav class="site-nav" role="navigation" aria-label="Food Japan navigation">
+    <a href="#aboutCard">About</a>
+    <a href="#sushi">Sushi</a>
+    <a href="#ramen">Ramen</a>
+    <a href="#donburi">Donburi</a>
+  </nav>
+</header>
+
+    <header class="page-header">
+     <h1>Types of Foods in Japan</h1>
+     <div class="divider"></div>
+    </header>
+
+    <main class="content">
+
+      <!--About Foods Section-->
+          <div class="about-card" id="aboutCard">
+      <div class="about-text">
+        <p>
+        <img src="alljapanesefoods.png"><br>
+          Japanese cuisine prizes seasonality, balance and “umami” — that savory depth discovered in 1908 — and is built around simple but precise techniques (think dashi, pickles, rice). Washoku, the traditional dietary culture that celebrates these values, is even recognized by UNESCO. Expect everything from delicate sushi and tempura to comforting ramen and busy bento boxes — all with regional twists and serious snack-game.
+        </p>
+
+        <div class="extra-content">
+          <p>
+            Japanese food (washoku) centers on seasonality, visual harmony, and layered savory flavors built from stocks like dashi and fermented staples such as miso and soy — the culinary philosophy is to highlight ingredients, not hide them. This approach was formalized and celebrated internationally when “washoku” was inscribed on UNESCO's Intangible Cultural Heritage list, reflecting the culture's respect for nature, ritual meals (New Year feasts, seasonal plates), and sustainable practices. Also, don't underestimate umami: Dr. Kikunae Ikeda isolated glutamate as the compound behind that deeply satisfying savory taste in 1908, which helped people explain why a bowl of ramen or a scoop of miso can feel so gratifying.<br><br>
+
+            When it comes to famous dishes, sushi (modern nigirizushi popularized in Edo) shows how quick, urban food can become national iconography; ramen, by contrast, is a Japanese riff on Chinese wheat-noodle soups that prospered in port cities and later exploded into regional styles (Sapporo miso, Hakata tonkotsu, etc.). Tempura is a neat bit of culinary globalization — frying techniques and battered veggies arrived via 16th-century Portuguese contacts and were deftly refined into a uniquely Japanese art. Add bento (modular boxed meals), yakitori, udon/ soba, takoyaki and countless local specialities, and you've got a cuisine that's at once meticulously traditional and constantly playful.
+          </p>
+        </div>
+      </div>
+
+      <button class="expand-btn" id="expandBtn">
+        Expand
+      </button>
+    </div>
+
+    <div class="divider soft"></div>
+
+      <!--Sushi Section-->
+      <section class="autoplay-section" id="sushi">
+        <h2 class="small-header">Sushi</h2>
+        <div class="autoplay-container glass-food">
+
+          <div class="swiper autoplay-swiper">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide"
+               data-title="Nigiri"
+               data-image="nigiri.png"
+               data-info="Nigiri is a traditional sushi made of hand-pressed vinegared rice topped with fresh seafood such as salmon, tuna, or shrimp.">
+            <img src="nigiri.png" alt="Nigiri">
+            <div class="caption">
+              <h1>Nigiri</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Maki"
+               data-image="maki.png"
+               data-info="Maki sushi consists of rice and fillings rolled in seaweed and sliced into bite-sized pieces.">
+            <img src="maki.png" alt="Maki">
+            <div class="caption">
+              <h1>Maki</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Chirashi"
+               data-image="chirashi.png"
+               data-info="Chirashi sushi is a bowl of sushi rice topped with a variety of sashimi and garnishes.">
+            <img src="chirashi.png" alt="Chirashi">
+            <div class="caption">
+              <h1>Chirashi</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Gunkan"
+               data-image="gunkan.png"
+               data-info="Gunkan sushi features a rice base wrapped with seaweed and topped with soft or loose ingredients like roe.">
+            <img src="gunkan.png" alt="Gunkan">
+            <div class="caption">
+              <h1>Gunkan</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Inari"
+               data-image="inari.png"
+               data-info="Inari sushi is vinegared rice wrapped inside a sweet and savory fried tofu pouch.">
+            <img src="inari.png" alt="Inari">
+            <div class="caption">
+              <h1>Inari</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!--RAMEN SECTION-->
+  <div class="divider soft"></div>
+
+  <section class="autoplay-section" data-direction="reverse" id="ramen">
+    <h2 class="small-header">Ramen</h2>
+    <div class="autoplay-container glass-food">
+
+      <div class="swiper autoplay-swiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide"
+               data-title="Shoyu Ramen"
+               data-image="shoyu.png"
+               data-info="Shoyu ramen features a soy sauce–based broth that is light, savory, and aromatic.">
+            <img src="shoyu.png" alt="Shoyu Ramen">
+            <div class="caption">
+              <h1>Shoyu</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Miso Ramen"
+               data-image="miso.png"
+               data-info="Miso ramen is known for its rich and hearty broth made from fermented soybean paste.">
+            <img src="miso.png" alt="Miso Ramen">
+            <div class="caption">
+              <h1>Miso</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Shio Ramen"
+               data-image="shio.png"
+               data-info="Shio ramen has a clear, salt-based broth that highlights the natural flavors of the ingredients.">
+            <img src="shio.png" alt="Shio Ramen">
+            <div class="caption">
+              <h1>Shio</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Tonkotsu Ramen"
+               data-image="tonkatsu.png"
+               data-info="Tonkotsu ramen is made from pork bone broth, giving it a creamy, rich, and intense flavor.">
+            <img src="tonkatsu.png" alt="Tonkotsu Ramen">
+            <div class="caption">
+              <h1>Tonkotsu</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Tsukemen"
+               data-image="tsukemen.png"
+               data-info="Tsukemen features cold noodles served separately from a concentrated dipping broth.">
+            <img src="tsukemen.png" alt="Tsukemen">
+            <div class="caption">
+              <h1>Tsukemen</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Hiyashi Chūka"
+               data-image="hiyashi.png"
+               data-info="Hiyashi chūka is a chilled ramen dish topped with colorful vegetables and meats, perfect for summer.">
+            <img src="hiyashi.png" alt="Hiyashi Chūka">
+            <div class="caption">
+              <h1>Hiyashi chūka</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider soft"></div>
+
+      <!--Sushi Section-->
+      <section class="autoplay-section" id="donburi">
+        <h2 class="small-header">Donburi (Rice Bowls)</h2>
+        <div class="autoplay-container glass-food">
+
+          <div class="swiper autoplay-swiper">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide"
+               data-title="Gyudon"
+               data-image="gyudon.png"
+               data-info="Gyudon is a rice bowl topped with thinly sliced beef simmered in soy sauce and onions. It became popular in the Meiji era as a fast and affordable meal.">
+            <img src="gyudon.png" alt="Nigiri">
+            <div class="caption">
+              <h1>Gyudon</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Katsudon"
+               data-image="katsudon.png"
+               data-info="Katsudon features a breaded pork cutlet cooked with egg and sauce over rice. It is often eaten before exams because “katsu” sounds like “win” in Japanese.">
+            <img src="katsudon.png" alt="Maki">
+            <div class="caption">
+              <h1>Katsudon</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Oyakodon"
+               data-image="oyakodon.png"
+               data-info="Oyakodon combines chicken and egg over rice, symbolizing the parent-and-child relationship. It is a classic home-style dish known for its comforting taste.">
+            <img src="oyakodon.png" alt="Chirashi">
+            <div class="caption">
+              <h1>Oyakodon</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Tendon"
+               data-image="tendon.png"
+               data-info="Tendon is a rice bowl topped with tempura drizzled with sweet sauce. It originated in Edo-era Tokyo as a filling meal for workers.">
+            <img src="tendon.png" alt="Gunkan">
+            <div class="caption">
+              <h1>Tendon</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Unadon"
+               data-image="unadon.png"
+               data-info="Unadon consists of grilled eel glazed with sweet soy sauce over rice. It has been eaten for centuries, especially in summer, to boost stamina.">
+            <img src="unadon.png" alt="Inari">
+            <div class="caption">
+              <h1>Unadon</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Butadon"
+               data-image="butadon.png"
+               data-info="Butadon is a pork rice bowl popular in Hokkaido. It reflects the region's pork farming culture and hearty cuisine.">
+            <img src="butadon.png" alt="Inari">
+            <div class="caption">
+              <h1>Butadon</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Kaisendon"
+               data-image="kaisedon.png"
+               data-info="Kaisendon is a seafood rice bowl topped with raw fish. It is common in coastal areas and fish markets.">
+            <img src="kaisedon.png" alt="Inari">
+            <div class="caption">
+              <h1>Kaisendon</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+
+          <div class="swiper-slide"
+               data-title="Tekka-don"
+               data-image="tekkadon.png"
+               data-info="Tekka-don is a simple tuna sashimi bowl. It was traditionally eaten by workers for its high energy content.">
+            <img src="tekkadon.png" alt="Inari">
+            <div class="caption">
+              <h1>Tekka-don</h1>
+              <ion-icon name="heart" class="like-btn"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!--INNER MODAL-->
+  <div class="modal-overlay" id="foodModal">
+    <div class="modal">
+
+      <button class="modal-close" aria-label="Close modal">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="modal-image">
+        <img id="modalImg" src="" alt="">
+      </div>
+
+      <div class="modal-content">
+        <h2 id="modalTitle"></h2>
+        <p id="modalInfo"></p>
+      </div>
+
+    </div>
+  </div>
+      </section>
+
+    </main>
+
+    <a href="japan-index.html" class="back-home">← Back</a>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-credit">
+       <span></span>
+    </p>
+    <p class="footer-copyright">
+      © 2026 All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionionicons.js"></script>
+<script src="food-japan.js"></script>
+
+</body>
+</html>
+
+
+

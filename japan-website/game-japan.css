@@ -1,0 +1,426 @@
+:root{
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.12);
+  --accent: rgba(255,255,255,0.95);
+  --glass-radius: 14px;
+}
+
+*{box-sizing:border-box}
+
+html,body{
+  height:100%;
+  margin:0;
+  font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto;
+}
+
+body{
+  background:linear-gradient(180deg, rgba(8,10,20,0.6), rgba(2,6,23,0.6));
+  color:var(--accent);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+  overflow:hidden;
+}
+
+.bg-image{
+  position:fixed;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0.25;
+  z-index:0;
+  transform:scale(1.05);
+}
+
+.app{
+  position:relative;
+  z-index:1;
+  width:100%;
+  max-width:1100px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.glass{
+  backdrop-filter:blur(14px) saturate(160%);
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  border-radius:var(--glass-radius);
+  box-shadow:0 10px 40px rgba(0,0,0,0.5);
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px;
+}
+
+.title{
+  margin:0;
+  font-weight:800;
+  font-size:1.35rem;
+}
+
+.controls{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.select-wrap{
+  display:flex;
+  flex-direction:column;
+  font-size:12px;
+  gap:6px;
+}
+
+select, .btn{
+  padding:8px 12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.04);
+  color:white;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.timer{
+  min-width:80px;
+  text-align:center;
+  padding:8px;
+  font-weight:700;
+}
+
+.board-wrap{
+  display:flex;
+  justify-content:center;
+}
+
+.puzzle{
+  width:720px;
+  height:480px;
+  display:grid;
+  padding:12px;
+  overflow:hidden;
+}
+
+.piece{
+  cursor:pointer;
+  transition:transform .22s cubic-bezier(.2,.9,.3,1), box-shadow .22s;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+.piece:hover{
+  transform:scale(1.04);
+}
+
+.piece.selected {
+  outline: 3px solid rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.6);
+  z-index:5;
+}
+
+.hidden{ display:none; }
+
+.overlay-card{
+  padding:30px;
+  text-align:center;
+  min-width:280px;
+}
+
+.footer {
+  text-align: center;
+}
+
+@media (max-width:900px){
+  .puzzle{ width:92vw; height:60vw }
+}
+
+@media (max-width:480px){
+  .topbar{ flex-direction:column; gap:12px }
+  .controls{ width:100%; justify-content:space-between }
+}
+
+/* REFERENCE MODAL FIX */
+
+#refWrap {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+#refWrap.hidden {
+  display: none;
+}
+
+#refWrap img {
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.3);
+  animation: popIn 0.3s ease;
+}
+
+/* smooth glass animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* WIN IMAGE HOVER EFFECT */
+@keyframes winHover {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.win-animation {
+  animation: winHover 1s ease-in-out;
+}
+
+/* small shadow/glow on hover */
+.ref:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 12px 36px rgba(0,0,0,0.45); }
+
+/* expanded reference (big preview) */
+.ref.expanded {
+  width: min(54vw, 540px);
+  height: min(44vw, 440px);
+  top: calc(50% - 220px);
+  right: calc(50% - 270px);
+  left: auto;
+  transform: none;
+  z-index: 20;
+  border-radius: 16px;
+  padding: 10px;
+}
+
+/* Hide/show helpers */
+.hidden { display: none !important; }
+
+.level-select {
+  background: rgba(2,6,23,0.6);
+}
+.level-select-card{ max-width: 420px; padding: 28px 26px; }
+.level-select-card h2 { margin:0 0 6px; font-size:1.4rem; }
+.level-select-card p { margin:0 0 16px; opacity:0.95; }
+.level-buttons { display:flex; gap:12px; justify-content:center; margin-top:8px; }
+.level-btn { min-width:100px; padding:10px 14px; border-radius:12px; font-weight:700; }
+
+/* make background and app blur when overlay is active */
+.app.blurred, .bg-image.blurred {
+  filter: blur(6px) saturate(120%);
+  transition: filter .28s ease;
+  pointer-events: none;
+}
+
+/* Reference button */
+.ref-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:10px;
+  font-weight:700;
+}
+
+.ref-modal-card {
+  max-width: 880px;
+  padding: 18px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
+
+.ref-modal-card img {
+  width: min(80vw, 760px);
+  height: auto;
+  max-height: min(70vh, 600px);
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+@media (max-width:520px) {
+  .ref-modal-card img { width: 92vw; max-height: 56vh; }
+}
+
+.app.blurred, .bg-image.blurred { filter: blur(6px) saturate(120%); transition: filter .28s ease; pointer-events: none; }
+
+/* MOBILE VERSION IMPROVEMENT */
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 16px;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .app {
+    gap: 16px;
+  }
+
+  /* Topbar stacked */
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .select-wrap {
+    width: 100%;
+  }
+
+  select,
+  .btn,
+  .ref-btn {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .timer {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  /* Puzzle board responsive */
+  .board-wrap {
+    width: 100%;
+  }
+
+  .puzzle {
+    width: 100%;
+    height: 70vw; 
+    max-height: 80vh;
+    padding: 8px;
+  }
+
+  /* Bigger tap area */
+  .piece {
+    border-radius: 8px;
+  }
+
+  .piece.selected {
+    transform: scale(1.06);
+  }
+
+  /* Overlay card mobile */
+  .overlay-card {
+    width: 90%;
+    padding: 22px;
+  }
+
+  /* Level select modal */
+  .level-select-card {
+    width: 92%;
+    padding: 22px;
+  }
+
+  .level-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .level-btn {
+    width: 100%;
+  }
+
+  /* Reference modal mobile */
+  .ref-modal-card {
+    width: 92%;
+  }
+
+  .ref-modal-card img {
+    width: 100%;
+    max-height: 60vh;
+  }
+
+}
+
+/* SMALL PHONES (EXTRA SMALL) */
+
+@media (max-width: 480px) {
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .puzzle {
+    height: 75vw;
+  }
+
+  .timer {
+    font-size: 16px;
+  }
+
+}
+
+/* EXIT BUTTON */
+
+.footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.exit-btn {
+  padding: 10px 28px;
+  border-radius: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all 0.3s ease;
+}
+
+/* Gradient hover */
+.exit-btn:hover {
+  background: linear-gradient(135deg, #ff4c60, #ff9966);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}

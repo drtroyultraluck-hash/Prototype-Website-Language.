@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Japan Glass Puzzle</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="game-japan.css">
+</head>
+<body>
+
+  <!-- BACKGROUND IMAGE -->
+  <div class="bg-image" id="bgImage"></div>
+
+  <main class="app">
+    <header class="topbar glass">
+      <h1 class="title">Japan Puzzle</h1>
+
+      <div class="controls">
+        <label class="select-wrap">
+          <span>Difficulty</span>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+
+        <button id="refBtn" class="btn ref-btn" type="button">
+          Reference
+        </button>
+
+        <button id="startBtn" class="btn glass">Start</button>
+        <div id="timer" class="timer glass">--:--</div>
+      </div>
+    </header>
+
+    <section class="board-wrap">
+      <div id="puzzleContainer" class="puzzle glass">
+        <div id="puzzleInner"></div>
+      </div>
+
+      <!-- Reference Preview -->
+      <div id="refWrap" class="ref glass hidden">
+        <img id="refImage" src="" alt="Reference" />
+      </div>
+    </section>
+
+    <!-- Level Selection Overlay -->
+    <div id="levelSelectOverlay" class="overlay level-select">
+      <div class="overlay-card glass level-select-card">
+        <h2>Select Level</h2>
+        <p>Choose a difficulty to start</p>
+        <div class="level-buttons">
+          <button class="btn level-btn" data-level="easy">Easy</button>
+          <button class="btn level-btn" data-level="medium">Medium</button>
+          <button class="btn level-btn" data-level="hard">Hard</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer glass">
+      <small>Click two pieces to swap</small>
+    </footer>
+
+    <div class="footer">
+  <a href="japan-index.html" class="btn exit-btn">EXIT</a>
+</div>
+  </main>
+
+  <!-- Win/Lose Overlay -->
+  <div id="messageOverlay" class="overlay hidden">
+    <div class="overlay-card glass">
+      <h2 id="overlayTitle"></h2>
+      <p id="overlaySub"></p>
+      <div style="display:flex;gap:12px;justify-content:center;">
+        <button id="tryAgainBtn" class="btn">Try Again</button>
+        <button id="nextLevelBtn" class="btn">Next Level</button>
+        <button id="exitBtn" class="btn">Exit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game-japan.js"></script>
+</body>
+</html>
