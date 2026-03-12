@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madrid</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tourist-spain.css">
+</head>
+
+<body>
+
+<header class="navbar glass">
+  <div class="logo">SPAIN</div>
+  <nav>
+    <a href="tourist-spain.html">Home</a>
+    <a href="madrid.html">Madrid</a>
+    <a href="barcelona.html">Barcelona</a>
+    <a href="seville.html">Seville</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="city-hero" style="background-image:url('seville.jpg')">
+  <div class="hero-content glass">
+    <h1>Seville</h1>
+    <p>Seville is the capital of Andalusia and is known for flamenco, Moorish architecture, and passionate cultural traditions. The city reflects centuries of Islamic and Christian influence.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <h2 class="section-title">Seville Gallery</h2>
+
+  <div class="cards-container">
+
+    <!-- NICE -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('s1.jpg')"></div>
+      <div class="card-body">
+        <h3>Seville Cathedral</h3>
+        <p>One of the largest Gothic cathedrals in the world.</p>
+        <button class="open-modal"
+          data-img="s1.jpg"
+          data-title="Seville Cathedral"
+          data-desc="Built on the site of a former mosque, Seville Cathedral is an architectural masterpiece completed in the 16th century. It houses the tomb of Christopher Columbus and features the Giralda bell tower, originally a minaret. Its immense interior and intricate chapels make it a symbol of Seville’s historical importance.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- CASTLE HILL -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('s2.jpg')"></div>
+      <div class="card-body">
+        <h3>Real Alcázar of Seville</h3>
+        <p>A stunning palace known for its Moorish design and lush gardens.</p>
+        <button class="open-modal"
+          data-img="s2.jpg"
+          data-title="Real Alcázar of Seville"
+          data-desc="The Real Alcázar is a royal palace complex that blends Islamic, Gothic, Renaissance, and Baroque styles. Its detailed tilework, arches, courtyards, and fountains showcase centuries of cultural influence. It remains an official royal residence and is also a UNESCO World Heritage Site.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- NICE CATHEDRAL -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('s3.jpg')"></div>
+      <div class="card-body">
+        <h3>Plaza de España</h3>
+        <p>A grand semicircular plaza built for the 1929 Ibero-American Exposition.</p>
+        <button class="open-modal"
+          data-img="s3.jpg"
+          data-title="Plaza de España"
+          data-desc="Plaza de España is famous for its sweeping architecture, central fountain, and decorative ceramic tiles representing Spain’s provinces. Visitors can walk along its bridges, admire its intricate designs, or take a boat ride along the canal. It is one of Seville’s most picturesque and beloved landmarks.">
+          View
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="placeModal" class="modal">
+  <div class="modal-box glass">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <img id="modalImage" src="">
+    <div class="modal-text">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const buttons = document.querySelectorAll(".open-modal");
+  const modal = document.getElementById("placeModal");
+  const modalImg = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDescription");
+  const closeBtn = document.getElementById("modalClose");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      modalImg.src = btn.dataset.img;
+      modalTitle.textContent = btn.dataset.title;
+      modalDesc.textContent = btn.dataset.desc;
+      modal.style.display = "flex";
+    });
+  });
+
+  function closeModal(){
+    modal.style.display = "none";
+    modalImg.src = "";
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if(e.target === modal){
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+      closeModal();
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>
