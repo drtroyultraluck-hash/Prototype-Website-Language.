@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies Recommendation in Spain</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylish Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="movie-spain.css">
+</head>
+<body>
+
+    <!-- SITE NAVBAR (ADD AFTER <body>) -->
+<header class="site-navbar glass" role="banner">
+  <a href="spain-index.html" class="back-btn glass" aria-label="Back to index">EXIT</a>
+
+  <nav class="site-nav" role="navigation" aria-label="About Japan navigation">
+    <a href="#anime">MOVIE TO WATCH</a>
+  </nav>
+</header>
+
+    <div class="background-overlay"></div>
+
+    <!-- TITLE OUTSIDE -->
+    <h1 class="main-title">MOVIE TO WATCH</h1>
+    <div class="divider"></div>
+
+    <!-- LIST CONTAINER WRAPPER -->
+    <div class="list-wrapper" id="anime">
+
+        <!-- movie 1 -->
+        <div class="anime-card" data-title="Pan's Labyrinth"
+             data-details="Genre: SDark Fantasy / War Drama<br>Release: 2006<br><br>Directed by Guillermo del Toro, this visually stunning film is set in post–Spanish Civil War Spain. It follows a young girl who escapes into a mysterious fantasy world while facing the harsh realities of war under a brutal regime."
+             data-link="https://www.crunchyroll.com">
+
+            <div class="anime-image">
+                <img src="movie1" alt="Your Name">
+            </div>
+
+            <div class="anime-content">
+                <h2>Pan's Labyrinth</h2>
+                <p class="details">Dark Fantasy / War Drama</p>
+                <button class="watch-btn">Watch Trailer</button>
+            </div>
+        </div>
+
+        <!-- movie 2 -->
+        <div class="anime-card" data-title="Demon Slayer"
+             data-details="Genre: Horror / Thriller<br>Release: 2023<br><br>Red, Starring Nicole Kidman, this psychological horror film tells the story of a mother who believes her house is haunted. Though in English, it was directed by Spanish filmmaker Alejandro Amenábar and became one of Spain’s most internationally successful films."
+             data-link="https://www.netflix.com">
+
+            <div class="anime-image">
+                <img src="movie2.jpg" alt="Demon Slayer">
+            </div>
+
+            <div class="anime-content">
+                <h2>The Others</h2>
+                <p class="details">Horror . Thriller</p>
+                <button class="watch-btn">Watch Trailer</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal" id="animeModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDetails"></p>
+            <a id="modalLink" target="_blank" class="full-watch-link">
+                Watch Full Anime Here
+            </a>
+        </div>
+    </div>
+
+    <script src="movie-spain.js"></script>
+
+</body>
+</html>

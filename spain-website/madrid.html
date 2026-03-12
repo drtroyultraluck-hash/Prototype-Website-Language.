@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madrid</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tourist-spain.css">
+</head>
+
+<body>
+
+<header class="navbar glass">
+  <div class="logo">SPAIN</div>
+  <nav>
+    <a href="tourist-spain.html">Home</a>
+    <a href="madrid.html">Madrid</a>
+    <a href="barcelona.html">Barcelona</a>
+    <a href="seville.html">Seville</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="city-hero" style="background-image:url('madrid.jpg')">
+  <div class="hero-content glass">
+    <h1>Madrid</h1>
+    <p>Madrid is the capital of Spain and the political, cultural, and royal center of the country. It is known for grand boulevards, historic architecture, world-class museums, and vibrant city life.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <h2 class="section-title">Madrid Gallery</h2>
+
+  <div class="cards-container">
+
+    <!-- 1 -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('m1.webp')"></div>
+      <div class="card-body">
+        <h3>Royal Palace of Madrid</h3>
+        <p>The largest royal palace in Western Europe, used for official state ceremonies.</p>
+        <button class="open-modal"
+          data-img="m1.webp"
+          data-title="Royal Palace of Madrid"
+          data-desc="Built in the 18th century, the Royal Palace stands on the site of a former Moorish fortress and showcases stunning Baroque architecture. Although Spain’s royal family does not live there today, it remains the official residence for state events. Visitors can explore its lavish rooms, grand staircase, royal armory, and beautifully decorated halls filled with art, chandeliers, and historical treasures.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('m2.jpg')"></div>
+      <div class="card-body">
+        <h3>Padro Museum</h3>
+        <p>Spain’s most famous art museum, home to European masterpieces.</p>
+        <button class="open-modal"
+          data-img="m2.jpg"
+          data-title="Padro Museum"
+          data-desc="The Prado Museum houses one of the finest collections of European art in the world, featuring works by Velázquez, Goya, and El Greco. Opened in 1819, it plays a major role in preserving Spain’s artistic heritage. The museum’s vast galleries display centuries of paintings and sculptures, making it a must-visit for art lovers.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('m3.jpg')"></div>
+      <div class="card-body">
+        <h3>Plaza Mayor<h3>
+        <p>A historic central square surrounded by elegant arcaded buildings.</p>
+        <button class="open-modal"
+          data-img="m3.jpg"
+          data-title="Plaza Mayor"
+          data-desc="Plaza Mayor dates back to the 17th century and has served as a marketplace, bullfighting arena, and site of royal ceremonies. Today, it is a lively gathering place filled with cafés, street performers, and cultural events. Its symmetrical architecture and warm-colored facades make it one of Madrid’s most recognizable landmarks.">
+          View
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="placeModal" class="modal">
+  <div class="modal-box glass">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <img id="modalImage" src="">
+    <div class="modal-text">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const buttons = document.querySelectorAll(".open-modal");
+  const modal = document.getElementById("placeModal");
+  const modalImg = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDescription");
+  const closeBtn = document.getElementById("modalClose");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      modalImg.src = btn.dataset.img;
+      modalTitle.textContent = btn.dataset.title;
+      modalDesc.textContent = btn.dataset.desc;
+      modal.style.display = "flex";
+    });
+  });
+
+  function closeModal(){
+    modal.style.display = "none";
+    modalImg.src = "";
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if(e.target === modal){
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+      closeModal();
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>
