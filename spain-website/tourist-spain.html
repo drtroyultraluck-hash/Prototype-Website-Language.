@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tourist Spain — Places</title>
+
+  <!-- Modern Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="tourist-spain.css">
+</head>
+<body>
+
+    <!-- BACK BUTTON -->
+<a href="spain-index.html" class="back-btn glass">
+  EXIT
+</a>
+
+  <header class="navbar glass">
+    <div class="logo">SPAIN</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#about">About</a>
+    </nav>
+    <button id="themeToggle" aria-label="Toggle theme">☾</button>
+  </header>
+
+
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="section hero">
+      <div class="hero-content glass">
+        <h1>Bienvenido España!</h1>
+        <p>Tradition meets the future in every corner.</p>
+        <a id="exploreBtn" class="cta" href="#destinations">Explore Now</a>
+      </div>
+    </section>
+
+    <!-- DESTINATIONS -->
+    <section id="destinations" class="section">
+      <h2 class="section-title">Top Destinations</h2>
+
+      <div class="cards-container">
+       
+        <a class="card glass" href="madrid.html" title="Open Tokyo page">
+          <div class="card-media" style="background-image:url('madrid.jpg')"></div>
+          <div class="card-body">
+            <h3>Madrid</h3>
+            <p>Spain’s capital city, known for its royal heritage, grand architecture, world-class museums, and lively urban culture.</p>
+          </div>
+        </a>
+
+        <a class="card glass" href="barcelona.html" title="Open Kyoto page">
+          <div class="card-media" style="background-image:url('barcelona.jpg')"></div>
+          <div class="card-body">
+            <h3>Barcelona</h3>
+            <p>A vibrant coastal city famous for its modernist architecture, Mediterranean beaches, and strong Catalan identity.</p>
+          </div>
+        </a>
+
+        <a class="card glass" href="seville.html" title="Open Osaka page">
+          <div class="card-media" style="background-image:url('seville.jpg')"></div>
+          <div class="card-body">
+            <h3>Seville</h3>
+            <p>The heart of Andalusia, celebrated for flamenco, Moorish landmarks, and rich historical traditions.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="about-box glass">
+        <h2>Why Visit Spain?</h2>
+        <p>
+          You may want to visit Spain for its perfect mix of history, culture, food, and vibrant lifestyle. From stunning landmarks in Barcelona and royal heritage in Madrid to flamenco traditions in Seville, Spain offers beautiful architecture, world-famous cuisine, sunny beaches, and unforgettable festivals — all in one diverse and lively country.
+
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="tourist-spain.js" defer></script>
+</body>
+</html>
