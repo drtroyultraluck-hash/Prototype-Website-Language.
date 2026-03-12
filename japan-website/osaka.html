@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyoto — Tourist Japan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tourist-japan.css">
+</head>
+
+<body>
+
+<header class="navbar glass">
+  <div class="logo">JAPAN</div>
+  <nav>
+    <a href="tourist-japan.html">Home</a>
+    <a href="tokyo.html">Tokyo</a>
+    <a href="kyoto.html">Kyoto</a>
+    <a href="osaka.html">Osaka</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="city-hero" style="background-image:url('osaka.jpg')">
+  <div class="hero-content glass">
+    <h1>Osaka</h1>
+    <p>Osaka is a vibrant city in Japan known for its street food, friendly locals, and lively urban atmosphere. It blends modern city life with rich history and culture.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <h2 class="section-title">Osaka Gallery</h2>
+
+  <div class="cards-container">
+
+    <!-- SHIBUYA -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('castle.jpg')"></div>
+      <div class="card-body">
+        <h3>Osaka Castle</h3>
+        <p>A historic Japanese castle surrounded by beautiful gardens and moats.</p>
+        <button class="open-modal"
+          data-img="castle.jpg"
+          data-title="Osaka Castle"
+          data-desc="Osaka Castle is one of Japan's most famous landmarks, originally built in the 16th century. It played a major role in the unification of Japan. Today, the castle has been restored and turned into a museum showcasing historical artifacts and exhibits. Visitors can explore the castle grounds, enjoy seasonal cherry blossoms in spring, and climb to the top for panoramic views of the city.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- SENSOJI -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('dotonburi.jpg')"></div>
+      <div class="card-body">
+        <h3>Dotonburi</h3>
+        <p>A lively entertainment and food district known for neon lights and street food.</p>
+        <button class="open-modal"
+          data-img="dotonburi.jpg"
+          data-title="Dotonburi"
+          data-desc="Dotonbori is one of Osaka's most popular attractions, famous for its bright billboards, giant 3D signs, and energetic nightlife. It is a paradise for food lovers, offering iconic Osaka dishes like takoyaki and kushikatsu. The area becomes especially vibrant at night when neon lights reflect on the canal, creating a colorful and exciting atmosphere.">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- TOKYO TOWER -->
+    <div class="card glass">
+      <div class="card-media" style="background-image:url('universal.png')"></div>
+      <div class="card-body">
+        <h3>Universal Studios Japan</h3>
+        <p>A world-class theme park with exciting rides and movie-themed attractions.</p>
+        <button class="open-modal"
+          data-img="universal.png"
+          data-title="Universal Studios Japan"
+          data-desc="Universal Studios Japan is one of Asia's most visited theme parks. It features attractions based on popular films and franchises, including The Wizarding World of Harry Potter and Super Nintendo World. The park offers thrilling rides, live shows, and immersive experiences suitable for all ages, making it a must-visit destination for families and movie fans.">
+          View
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="placeModal" class="modal">
+  <div class="modal-box glass">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <img id="modalImage" src="">
+    <div class="modal-text">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const buttons = document.querySelectorAll(".open-modal");
+  const modal = document.getElementById("placeModal");
+  const modalImg = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDescription");
+  const closeBtn = document.getElementById("modalClose");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      modalImg.src = btn.dataset.img;
+      modalTitle.textContent = btn.dataset.title;
+      modalDesc.textContent = btn.dataset.desc;
+      modal.style.display = "flex";
+    });
+  });
+
+  function closeModal(){
+    modal.style.display = "none";
+    modalImg.src = "";
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if(e.target === modal){
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+      closeModal();
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>
